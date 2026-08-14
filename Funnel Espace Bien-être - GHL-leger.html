@@ -6,6 +6,7 @@
 <title>L'Espace Bien-être</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
 <style>
   body { margin:0; background:#f9f7f4; font-family:'Work Sans',sans-serif; color:#2f4443; line-height:1.6; font-weight:300; overflow-x:hidden; }
   * { box-sizing:border-box; }
@@ -54,6 +55,9 @@
     .testimonial-grid { grid-template-columns:none !important; grid-auto-flow:column !important; grid-auto-columns:82% !important; overflow-x:auto !important; padding-bottom:8px !important; -webkit-overflow-scrolling:touch; }
     .testimonial-grid > div { padding:20px !important; }
     .pain-grid > div { width:calc(50% - 9px) !important; height:auto !important; min-height:100px; }
+    .platform-scroll { grid-auto-columns:70% !important; }
+    .avant-apres-grid { grid-template-columns:1fr !important; }
+    .start-grid { grid-template-columns:1fr !important; }
   }
 </style>
 </head>
@@ -61,7 +65,7 @@
 
   <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 6vw;max-width:1200px;margin:0 auto;position:sticky;top:0;background:#f9f7f4cc;backdrop-filter:blur(6px);z-index:10;">
     <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a4a76481bf938e547b26d56.jpg" alt="Chantal Lefrançois" style="height:64px;width:auto;object-fit:contain;flex-shrink:0;">
-    <a href="#pricing" style="text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:white;background:#e09352;padding:11px 22px;border-radius:100px;">Je m'abonne</a>
+    <a href="#pricing" style="text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:white;background:#e09352;padding:11px 22px;border-radius:100px;">Je rejoins l'Espace Bien-être</a>
   </div>
   <div style="max-width:1200px;margin:0 auto;height:1px;background:#e2ded7;"></div>
 
@@ -73,9 +77,29 @@
       <h1 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(32px,4.6vw,52px);line-height:1.16;margin:0 0 20px;">Arrêtez de recommencer<br><span style="font-style:italic;color:#e09352;">chaque lundi.</span></h1>
       <p style="font-size:19px;opacity:0.85;max-width:560px;margin:0 auto 40px;text-wrap:pretty;">Vous connaissez la routine : motivée le lundi, épuisée le mercredi, coupable le dimanche. Ici, on brise ce cycle, une habitude à la fois, à votre rythme.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="#pricing" style="text-decoration:none;font-size:15.5px;font-weight:600;color:white;background:#e09352;padding:16px 30px;border-radius:100px;">Je découvre l'Espace Bien-être</a>
+        <a href="#pricing" style="text-decoration:none;font-size:15.5px;font-weight:600;color:white;background:#e09352;padding:16px 30px;border-radius:100px;">Je rejoins l'Espace Bien-être →</a>
         <a href="#recettes" style="text-decoration:none;font-size:15.5px;font-weight:600;color:#f9f7f4;background:rgba(249,247,244,0.1);border:1px solid rgba(249,247,244,0.3);padding:16px 30px;border-radius:100px;backdrop-filter:blur(6px);">Voir les recettes gratuites</a>
       </div>
+    </div>
+  </section>
+
+  <section style="background:#f9f7f4;padding:70px 0 20px;">
+    <div style="max-width:1160px;margin:0 auto;padding:0 6vw;text-align:center;">
+      <div style="font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#e09352;margin-bottom:14px;">Visitez la plateforme</div>
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,34px);margin:0 0 20px;color:#2f4443;">Un aperçu de ce que <span style="font-style:italic;color:#609795;">vous retrouvez à l'intérieur.</span></h2>
+      <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;">
+        <div><span style="font-family:'Lora',serif;font-size:26px;color:#e09352;">100+</span> <span style="font-size:14px;color:#2f4443;opacity:0.7;">ressources</span></div>
+        <div><span style="font-family:'Lora',serif;font-size:26px;color:#e09352;">20h+</span> <span style="font-size:14px;color:#2f4443;opacity:0.7;">de contenu</span></div>
+        <div><span style="font-family:'Lora',serif;font-size:26px;color:#e09352;">Milliers</span> <span style="font-size:14px;color:#2f4443;opacity:0.7;">de femmes accompagnées</span></div>
+      </div>
+    </div>
+    <div class="platform-scroll" style="display:grid;grid-auto-flow:column;grid-auto-columns:260px;gap:16px;overflow-x:auto;padding:0 6vw 12px;-webkit-overflow-scrolling:touch;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f598.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f58d.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f594.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf699074f5ef67949ec.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f588.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6fe4291bd103d7afb.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
     </div>
   </section>
 
@@ -122,14 +146,29 @@
       <div style="width:22px;height:22px;border-radius:50%;border:2px solid #609795;"></div>
       <div style="width:12px;height:12px;border-radius:50%;background:#e09352;margin-top:5px;"></div>
     </div>
-    <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,34px);color:#2f4443;margin:0 0 56px;">Vous avez probablement déjà essayé : <span style="font-style:italic;color:#609795;">et ça n'a jamais tenu.</span></h2>
-    <div class="pain-grid" style="display:flex;flex-wrap:wrap;gap:18px;justify-content:center;max-width:820px;margin:0 auto 40px;">
+    <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,34px);color:#2f4443;margin:0 0 40px;">Vous avez probablement déjà essayé : <span style="font-style:italic;color:#609795;">et ça n'a jamais tenu.</span></h2>
+    <div class="pain-grid" style="display:flex;flex-wrap:wrap;gap:18px;justify-content:center;max-width:820px;margin:0 auto 44px;">
       <div style="width:170px;height:110px;border-radius:14px;background:white;box-shadow:0 10px 24px rgba(47,68,67,0.12);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;font-weight:500;color:#3f6462;padding:16px;animation:popIn 0.6s ease-out 0.1s both, popPulse 3.2s ease-in-out 0.1s infinite;">Les plans alimentaires stricts</div>
       <div style="width:170px;height:110px;border-radius:14px;background:white;box-shadow:0 10px 24px rgba(47,68,67,0.12);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;font-weight:500;color:#3f6462;padding:16px;animation:popIn 0.6s ease-out 0.35s both, popPulse 3.2s ease-in-out 0.9s infinite;">Les défis de 21 jours</div>
       <div style="width:170px;height:110px;border-radius:14px;background:#3f6462;box-shadow:0 10px 24px rgba(47,68,67,0.18);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;font-weight:500;color:#f9f7f4;padding:16px;animation:popIn 0.6s ease-out 0.6s both, popPulse 3.2s ease-in-out 1.7s infinite;">Les programmes qui demandent d'être parfaite</div>
       <div style="width:170px;height:110px;border-radius:14px;background:white;box-shadow:0 10px 24px rgba(47,68,67,0.12);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;font-weight:500;color:#3f6462;padding:16px;animation:popIn 0.6s ease-out 0.85s both, popPulse 3.2s ease-in-out 2.5s infinite;">Les listes interminables de choses à faire</div>
     </div>
-    <p style="font-size:18px;line-height:1.8;max-width:640px;margin:0 auto;text-wrap:pretty;color:#3f6462;">Ce n'est pas un manque de volonté. C'est simplement que ces méthodes n'ont jamais été pensées pour durer. L'Espace Bien-être vous aide à passer du savoir à l'action — <em style="font-family:'Lora',serif;color:#e09352;">sans pression, sans culpabilité, sans tout changer d'un coup.</em></p>
+    <p style="font-size:18px;line-height:1.8;max-width:640px;margin:0 auto 56px;text-wrap:pretty;color:#3f6462;">Ce n'est pas un manque de volonté. C'est simplement que ces méthodes n'ont jamais été pensées pour durer. L'Espace Bien-être vous aide à passer du savoir à l'action — <em style="font-family:'Lora',serif;color:#e09352;">sans pression, sans culpabilité, sans tout changer d'un coup.</em></p>
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,34px);margin:0 0 44px;color:#2f4443;">Avant / <span style="font-style:italic;color:#609795;">Après</span></h2>
+      <div class="avant-apres-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left;position:relative;">
+        <div style="background:white;border-radius:18px;padding:36px 32px;box-shadow:0 14px 30px rgba(47,68,67,0.08);border:1px solid #e2ded7;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;"><div style="width:30px;height:30px;border-radius:50%;background:#f3ece4;color:#c17a44;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;">✕</div><div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#2f4443;opacity:0.55;font-weight:600;">Avant</div></div><div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:16px;color:#2f4443;opacity:0.75;">Recommencer chaque lundi</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:16px;color:#2f4443;opacity:0.75;">Culpabiliser en mangeant</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:16px;color:#2f4443;opacity:0.75;">Être noyée dans l'information</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:16px;color:#2f4443;opacity:0.75;">Manquer de constance</span></div>
+        </div></div>
+        <div style="background:#3f6462;border-radius:18px;padding:36px 32px;box-shadow:0 20px 40px rgba(63,100,98,0.3);position:relative;overflow:hidden;"><div style="position:absolute;width:200px;height:200px;border-radius:50%;background:#e09352;filter:blur(70px);opacity:0.35;top:-70px;right:-60px;"></div><div style="position:relative;display:flex;align-items:center;gap:10px;margin-bottom:22px;"><div style="width:30px;height:30px;border-radius:50%;background:#e09352;color:white;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;">✓</div><div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#e09352;font-weight:700;">Après</div></div><div style="position:relative;display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:16.5px;color:#f9f7f4;font-weight:500;">Comprendre son corps</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:16.5px;color:#f9f7f4;font-weight:500;">Avoir une routine simple</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:16.5px;color:#f9f7f4;font-weight:500;">Manger sans culpabilité</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:16.5px;color:#f9f7f4;font-weight:500;">Avoir des habitudes durables</span></div>
+        </div></div>
+      </div>
     </div>
   </section>
 
@@ -139,10 +178,10 @@
     <div>
       <div style="font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#e09352;margin-bottom:18px;">Pourquoi cet espace existe</div>
       <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(28px,3.2vw,38px);margin:0 0 24px;color:#2f4443;">Je suis Chantal, <span style="font-style:italic;color:#609795;">naturopathe.</span></h2>
-      <p style="font-size:17px;opacity:0.8;margin:0 0 18px;text-wrap:pretty;">Passionnée de santé depuis mon enfance, j'ai traversé mes propres épreuves — anorexie, boulimie, maladie cœliaque — avant de me tourner vers la naturopathie et de me spécialiser dans le système hormonal féminin.</p>
+      <p style="font-size:17px;opacity:0.8;margin:0 0 18px;text-wrap:pretty;">Passionnée de santé depuis mon enfance, j'ai traversé mes propres épreuves (anorexie, boulimie, maladie cœliaque) avant de me tourner vers la naturopathie et de me spécialiser dans le système hormonal féminin.</p>
       <p style="font-size:17px;opacity:0.8;margin:0 0 18px;text-wrap:pretty;">J'ai créé l'Espace Bien-être parce que je voyais trop de femmes épuisées par les régimes stricts et les programmes qui exigent d'être parfaites. Ce que j'ai voulu construire, c'est l'inverse : un accompagnement doux, progressif, qui respecte le rythme de chacune.</p>
       <p style="font-family:'Lora',serif;font-style:italic;font-size:18px;color:#609795;margin:0 0 30px;">Cette plateforme, c'est tout ce que j'aurais aimé avoir quand j'ai commencé mon propre chemin.</p>
-      <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15px;font-weight:600;color:white;background:#e09352;padding:15px 28px;border-radius:100px;">Découvrir l'Espace Bien-être →</a>
+      <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15px;font-weight:600;color:white;background:#e09352;padding:15px 28px;border-radius:100px;">Je rejoins l'Espace Bien-être →</a>
     </div>
   </div>
   </section>
@@ -163,22 +202,18 @@
     </div>
   </section>
 
-  <section class="solution-intro" style="max-width:760px;margin:0 auto;padding:150px 6vw 60px;position:relative;text-align:center;">
-    <div class="float-circle" style="position:absolute;top:40px;right:40px;width:110px;height:110px;">
-      <div style="position:absolute;inset:0;border-radius:50%;background:#609795;opacity:0.35;animation:pulseRing 2.4s ease-out infinite;"></div>
-      <div style="position:absolute;inset:0;border-radius:50%;background:#609795;display:flex;align-items:center;justify-content:center;text-align:center;color:white;font-size:12.5px;font-weight:600;line-height:1.3;padding:14px;">Plateforme accessible en tout temps</div>
-    </div>
-    <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(30px,3.6vw,42px);margin:0 0 20px;color:#2f4443;">L'<span style="font-style:italic;color:#609795;">Espace</span> Bien-être</h2>
-    <p style="font-size:19px;opacity:0.75;line-height:1.8;text-wrap:pretty;margin:0 0 32px;">Un accompagnement doux et progressif, pensé pour s'intégrer dans votre vie plutôt que de la bousculer. Vous avancez à votre rythme, avec des explications claires et des gestes concrets pour votre santé physique, hormonale et émotionnelle.</p>
-    <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15px;font-weight:600;color:white;background:#609795;padding:15px 28px;border-radius:100px;">Découvrir l'Espace Bien-être →</a>
-  </section>
-
   <section style="background:#eef2f1;padding:70px 6vw 80px;">
     <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:48px;">
       <div style="font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#e09352;margin-bottom:16px;">Tout est déjà là, dès votre première connexion</div>
       <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(28px,3.2vw,38px);margin:0 0 18px;color:#2f4443;">Près de 100 ressources <span style="font-style:italic;color:#609795;">déjà prêtes</span> pour vous</h2>
       <p style="font-size:16.5px;line-height:1.6;color:#2f4443;opacity:0.75;max-width:620px;margin:0 auto;text-wrap:pretty;">Aucune attente, aucun module à débloquer. Vous entrez, vous choisissez ce dont votre corps a besoin aujourd'hui — et vous commencez ce soir.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;max-width:900px;margin:0 auto 48px;text-align:center;">
+      <div><div style="font-family:'Lora',serif;font-size:clamp(26px,3vw,34px);color:#e09352;">100+</div><div style="font-size:13.5px;color:#2f4443;opacity:0.75;">ressources</div></div>
+      <div><div style="font-family:'Lora',serif;font-size:clamp(26px,3vw,34px);color:#e09352;">20h+</div><div style="font-size:13.5px;color:#2f4443;opacity:0.75;">de contenu</div></div>
+      <div><div style="font-family:'Lora',serif;font-size:clamp(26px,3vw,34px);color:#e09352;">Chaque mois</div><div style="font-size:13.5px;color:#2f4443;opacity:0.75;">de nouvelles ressources</div></div>
+      <div><div style="font-family:'Lora',serif;font-size:clamp(26px,3vw,34px);color:#e09352;">Milliers</div><div style="font-size:13.5px;color:#2f4443;opacity:0.75;">de femmes accompagnées</div></div>
     </div>
     <div style="max-width:380px;margin:0 auto 60px;">
       <div style="position:relative;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(47,68,67,0.14);aspect-ratio:4/3;">
@@ -229,25 +264,44 @@
         <div style="background:#f9f7f4;border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 10px 22px rgba(0,0,0,0.14);min-width:0;"><div style="width:34px;height:34px;border-radius:50%;background:#609795;color:white;font-family:'Lora',serif;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><div style="flex:1;min-width:0;"><h3 style="font-family:'Lora',serif;font-weight:600;font-size:15.5px;margin:0 0 3px;color:#2f4443;">Lives exclusifs</h3><p style="font-size:12.5px;opacity:0.65;margin:0;color:#2f4443;">Questions-réponses &amp; enseignements.</p></div><div style="display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;"><span style="font-size:11.5px;opacity:0.4;text-decoration:line-through;color:#2f4443;">197 $</span><span style="font-size:12px;font-weight:700;color:#e09352;">Inclus</span></div></div>
         <div style="grid-column:1 / 3;background:#f9f7f4;border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 10px 22px rgba(0,0,0,0.14);min-width:0;"><div style="width:34px;height:34px;border-radius:50%;background:#609795;color:white;font-family:'Lora',serif;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><div style="flex:1;min-width:0;"><h3 style="font-family:'Lora',serif;font-weight:600;font-size:15.5px;margin:0 0 3px;color:#2f4443;">40 % de rabais sur les ebooks</h3><p style="font-size:12.5px;opacity:0.65;margin:0;color:#2f4443;">Pour approfondir vos sujets préférés.</p></div><div style="display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;"><span style="font-size:11.5px;opacity:0.4;text-decoration:line-through;color:#2f4443;">50 $</span><span style="font-size:12px;font-weight:700;color:#e09352;">Inclus</span></div></div>
       </div>
-      <div style="text-align:center;"><a href="#pricing" style="display:inline-block;text-decoration:none;font-size:16px;font-weight:600;color:#3f6462;background:#f9f7f4;padding:16px 32px;border-radius:100px;">Je profite des bonus →</a></div>
+      <div style="text-align:center;"><a href="#pricing" style="display:inline-block;text-decoration:none;font-size:16px;font-weight:600;color:#3f6462;background:#f9f7f4;padding:16px 32px;border-radius:100px;">Je rejoins l'Espace Bien-être →</a></div>
     </div>
   </section>
+
+  <section style="background:#f9f7f4;padding:100px 6vw 60px;">
+    <div style="max-width:820px;margin:0 auto;text-align:center;">
+      <div style="font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#e09352;margin-bottom:16px;">Votre premier jour</div>
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,34px);margin:0 0 16px;color:#2f4443;">Par où <span style="font-style:italic;color:#609795;">commencer ?</span></h2>
+      <p style="font-size:16px;opacity:0.7;max-width:520px;margin:0 auto 44px;">Voici exactement ce qui vous attend dès votre inscription. Pas de zone grise, pas de page blanche.</p>
+      <div class="start-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:left;">
+        <div style="background:white;border:1px solid #e2ded7;border-radius:14px;padding:26px 22px;box-shadow:0 10px 24px rgba(47,68,67,0.08);transition:transform 0.25s ease,box-shadow 0.25s ease;animation:popIn 0.6s ease-out 0.05s both;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 32px rgba(47,68,67,0.16)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 10px 24px rgba(47,68,67,0.08)';"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">1</div><div style="font-size:15px;color:#2f4443;">Vous complétez le défi « Mon pourquoi » pour mettre sur papier ce que vous voulez réellement.</div></div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:14px;padding:26px 22px;box-shadow:0 10px 24px rgba(47,68,67,0.08);transition:transform 0.25s ease,box-shadow 0.25s ease;animation:popIn 0.6s ease-out 0.2s both;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 32px rgba(47,68,67,0.16)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 10px 24px rgba(47,68,67,0.08)';"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">2</div><div style="font-size:15px;color:#2f4443;">Vous intégrez votre première cohérence cardiaque, 5 minutes suffisent.</div></div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:14px;padding:26px 22px;box-shadow:0 10px 24px rgba(47,68,67,0.08);transition:transform 0.25s ease,box-shadow 0.25s ease;animation:popIn 0.6s ease-out 0.35s both;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 32px rgba(47,68,67,0.16)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 10px 24px rgba(47,68,67,0.08)';"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">3</div><div style="font-size:15px;color:#2f4443;">Vous regardez votre première vidéo, à votre rythme.</div></div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:14px;padding:26px 22px;box-shadow:0 10px 24px rgba(47,68,67,0.08);transition:transform 0.25s ease,box-shadow 0.25s ease;animation:popIn 0.6s ease-out 0.5s both;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 32px rgba(47,68,67,0.16)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 10px 24px rgba(47,68,67,0.08)';"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">4</div><div style="font-size:15px;color:#2f4443;">Vous commencez votre première habitude, en douceur.</div></div>
+      </div>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:17px;color:#609795;margin:36px 0 0;">Pas besoin de tout savoir à l'avance. On vous guide, une étape à la fois.</p>
+    </div>
+  </section>
+
+
 
   <section style="background:#eef2f1;padding:100px 6vw;">
     <div style="max-width:900px;margin:0 auto;text-align:center;">
       <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,34px);margin:0 0 16px;color:#2f4443;">Un accompagnement au dixième du prix</h2>
       <p style="font-family:'Lora',serif;font-style:italic;font-size:17px;color:#609795;margin:0 0 44px;">Même accompagnement, même douceur — juste plus accessible, tous les jours.</p>
-      <div class="compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#d5ddd9;border-radius:14px;overflow:hidden;">
-        <div style="background:#2f4443;color:#f9f7f4;padding:36px;text-align:left;"><div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.65;margin-bottom:14px;">Suivi individuel</div><div style="font-family:'Lora',serif;font-size:32px;margin-bottom:8px;">166 $ <span style="font-size:15px;opacity:0.6;">/ mois</span></div><div style="font-size:14px;opacity:0.7;">1 rencontre par mois, sur rendez-vous</div></div>
-        <div style="background:#3f6462;color:#f9f7f4;padding:36px;text-align:left;position:relative;"><div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#e09352;font-weight:600;margin-bottom:14px;">L'Espace Bien-être</div><div style="font-family:'Lora',serif;font-size:32px;margin-bottom:8px;">dès 16,66 $ <span style="font-size:15px;opacity:0.6;">/ mois</span></div><div style="font-size:14px;opacity:0.85;">Accès illimité, 24/7, à votre rythme</div></div>
+      <div style="display:inline-flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;background:white;border-radius:100px;padding:14px 32px;box-shadow:0 12px 28px rgba(47,68,67,0.1);">
+        <div style="text-align:left;"><div style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#2f4443;opacity:0.5;margin-bottom:4px;">Suivi individuel</div><div style="font-family:'Lora',serif;font-size:22px;color:#2f4443;opacity:0.5;text-decoration:line-through;">166 $ / mois</div></div>
+        <div style="font-family:'Lora',serif;font-size:26px;color:#e09352;">→</div>
+        <div style="text-align:left;"><div style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#609795;font-weight:600;margin-bottom:4px;">L'Espace Bien-être</div><div style="font-family:'Lora',serif;font-size:26px;color:#3f6462;">dès 16,66 $ <span style="font-size:14px;opacity:0.6;font-family:'Work Sans',sans-serif;">/ mois</span></div></div>
       </div>
+      <p style="font-size:14.5px;color:#2f4443;opacity:0.6;margin:18px 0 0;">Accès illimité, 24/7, à votre rythme.</p>
     </div>
   </section>
 
   <section style="background:#3f6462;color:#f9f7f4;padding:64px 6vw;text-align:center;">
     <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(24px,2.8vw,32px);margin:0 0 16px;">Le temps de <span style="font-style:italic;color:#e09352;">vraiment</span> transformer vos habitudes.</h2>
     <p style="font-size:17px;opacity:0.85;max-width:680px;margin:0 auto 28px;">Plus de 100 ressources, ateliers, méditations, vidéos de yoga, outils de gestion du stress et formations en santé féminine, accessibles en tout temps, à votre rythme. Les 5 bonus sont inclus avec votre abonnement dès aujourd'hui.</p>
-    <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15px;font-weight:600;color:#3f6462;background:#f9f7f4;padding:15px 28px;border-radius:100px;">Voir les plans →</a>
+    <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15px;font-weight:600;color:#3f6462;background:#f9f7f4;padding:15px 28px;border-radius:100px;">Je rejoins l'Espace Bien-être →</a>
   </section>
 
   <section id="pricing" style="max-width:1080px;margin:0 auto;padding:70px 6vw;text-align:center;">
