@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'Espace Bien-être</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#f9f7f4; font-family:'Work Sans',sans-serif; color:#2f4443; line-height:1.6; font-weight:300; overflow-x:hidden; }
+  * { box-sizing:border-box; }
+  a { color:#609795; }
+  a:hover { color:#3f6462; }
+  @keyframes heroDrift1 { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(30px,-20px) scale(1.08); } }
+  @keyframes heroDrift2 { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(-24px,26px) scale(1.05); } }
+  @keyframes popIn { 0% { opacity:0; transform:scale(0.6) translateY(16px); } 60% { opacity:1; transform:scale(1.06) translateY(0); } 100% { opacity:1; transform:scale(1) translateY(0); } }
+  .need-card { transition:transform 0.25s ease, box-shadow 0.25s ease; scroll-snap-align:start; }
+  .need-card:hover { transform:translateY(-6px); box-shadow:0 20px 36px rgba(47,68,67,0.16) !important; }
+  .testimonial-grid > div { scroll-snap-align:start; }
+  .faq-body { overflow:hidden; max-height:0; transition:max-height 0.3s ease; }
+  .faq-item.open .faq-body { max-height:300px; }
+  .faq-item.open .faq-icon { background:#e09352; color:white; transform:rotate(45deg); }
+  @media (max-width: 768px) {
+    section { padding-top:56px !important; padding-bottom:56px !important; }
+    h1 { font-size:32px !important; }
+    h2 { font-size:25px !important; }
+    .story-grid { grid-template-columns:1fr !important; gap:24px !important; }
+    .story-img { max-width:220px !important; margin:0 auto !important; }
+    .need-grid { grid-auto-columns:78% !important; gap:12px !important; }
+    .need-grid > div > div { padding:18px 18px 22px !important; }
+    .need-grid h3 { font-size:15px !important; }
+    .need-grid p { font-size:13px !important; }
+    .start-grid { grid-template-columns:1fr 1fr !important; gap:10px !important; }
+    .avant-apres-grid { grid-template-columns:1fr !important; }
+    .platform-scroll { grid-auto-columns:70% !important; }
+    .stat-grid { grid-template-columns:1fr 1fr !important; }
+    .scenario-grid { grid-template-columns:1fr !important; }
+    .bonus-list { grid-template-columns:1fr !important; }
+    .price-grid { grid-template-columns:1fr !important; }
+    .testimonial-grid { grid-auto-columns:82% !important; gap:14px !important; }
+    .testimonial-grid > div { scroll-snap-align:start; }
+    .optin-grid { grid-template-columns:1fr auto !important; gap:18px !important; }
+    .optin-img { width:110px !important; height:110px !important; }
+    #recette-form { flex-wrap:wrap !important; }
+    #recette-form input, #recette-form button { width:100% !important; min-width:0 !important; }
+  }
+</style>
+</head>
+<body>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 6vw;max-width:1200px;margin:0 auto;position:sticky;top:0;background:#f9f7f4cc;backdrop-filter:blur(6px);z-index:10;">
+    <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a4a76481bf938e547b26d56.jpg" alt="Chantal Lefrançois" style="height:56px;width:auto;object-fit:contain;flex-shrink:0;">
+    <a href="#pricing" style="text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:white;background:#e09352;padding:11px 20px;border-radius:100px;text-align:center;">Je rejoins l'Espace</a>
+  </div>
+
+  <!-- 1. HERO -->
+  <section style="position:relative;overflow:hidden;background:radial-gradient(circle at 30% 20%,#3f6462,#2f4443 70%);">
+    <div style="position:absolute;width:380px;height:380px;border-radius:50%;background:#609795;filter:blur(80px);opacity:0.55;top:-110px;left:-100px;animation:heroDrift1 12s ease-in-out infinite;"></div>
+    <div style="position:absolute;width:340px;height:340px;border-radius:50%;background:#e09352;filter:blur(90px);opacity:0.4;bottom:-120px;right:-80px;animation:heroDrift2 14s ease-in-out infinite;"></div>
+    <div style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:60px 6vw;text-align:center;color:#f9f7f4;">
+      <h1 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(32px,4.6vw,50px);line-height:1.16;margin:0 0 18px;text-wrap:balance;">Ton espace pour prendre soin de toi, <span style="font-style:italic;color:#e09352;">sans avoir à chercher partout.</span></h1>
+      <p style="font-size:18px;opacity:0.88;max-width:540px;margin:0 auto 28px;text-wrap:pretty;">Pas besoin de tout faire. Tu choisis ce dont tu as besoin aujourd'hui, et tu avances à ton rythme.</p>
+      <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15.5px;font-weight:600;color:white;background:#e09352;padding:17px 34px;border-radius:100px;">Je rejoins l'Espace Bien-être →</a>
+      <div style="font-size:13px;opacity:0.75;margin-top:16px;">100+ ressources • Accès immédiat • Dès 16,66 $/mois (199,99 $ facturé annuellement)</div>
+    </div>
+  </section>
+
+  <!-- 2. PAS BESOIN DE PLUS D'INFO -->
+  <section style="background:#f9f7f4;padding:100px 6vw 90px;text-align:center;">
+    <div style="max-width:820px;margin:0 auto;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 44px;color:#2f4443;text-wrap:balance;">Tu sais déjà beaucoup de choses. <span style="font-style:italic;color:#609795;">Le problème, c'est de savoir quoi faire au bon moment.</span></h2>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:720px;margin:0 auto 44px;">
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.05s both;">Tu sauvegardes des recettes</div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.15s both;">Tu regardes des Reels sur les hormones</div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.25s both;">Tu écoutes un podcast sur le sommeil</div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.35s both;">Tu lis sur le cortisol</div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.45s both;">Tu veux méditer</div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.55s both;">Tu veux mieux manger</div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.65s both;">Tu veux recommencer à bouger</div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:100px;padding:10px 18px;font-size:14.5px;color:#3f6462;animation:popIn 0.6s ease-out 0.75s both;">Tu veux prendre soin de ton système nerveux</div>
+      </div>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:20px;color:#2f4443;margin:0 0 28px;">Mais à force d'avoir de l'information partout… tu finis par ne rien appliquer.</p>
+      <p style="font-size:17px;line-height:1.8;max-width:600px;margin:0 auto;color:#3f6462;text-wrap:pretty;">L'Espace Bien-être a été créé pour arrêter de chercher partout. Un seul endroit. Des ressources concrètes. Et surtout, la possibilité de choisir ce dont tu as besoin <strong style="font-weight:600;color:#e09352;">aujourd'hui</strong>.</p>
+    </div>
+  </section>
+
+  <!-- 3. AUJOURD'HUI J'AI BESOIN DE -->
+  <section style="background:#3f6462;padding:100px 6vw;position:relative;overflow:hidden;">
+    <div style="position:absolute;width:360px;height:360px;border-radius:50%;background:#e09352;filter:blur(110px);opacity:0.25;top:-120px;right:-80px;"></div>
+    <div style="position:relative;max-width:1080px;margin:0 auto;text-align:center;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);margin:0 0 48px;color:#f9f7f4;">Aujourd'hui, <span style="font-style:italic;color:#e09352;">j'ai besoin de…</span></h2>
+      <div class="need-grid" style="display:grid;grid-auto-flow:column;grid-auto-columns:300px;gap:16px;text-align:left;margin:0 -6vw 16px;padding:8px 6vw 20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:6vw;-webkit-overflow-scrolling:touch;">
+        <div class="need-card" style="background:#f9f7f4;border-radius:18px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,0.14);"><img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6ad583b3f9a985d42c06ad99.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;display:block;"><div style="padding:22px 24px 26px;"><div style="font-family:'Lora',serif;font-size:14px;color:#e09352;margin-bottom:10px;">01</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:19px;margin:0 0 8px;color:#2f4443;">Calmer mon système nerveux</h3><p style="font-size:14.5px;margin:0;color:#2f4443;opacity:0.75;">Respirations, méditations et outils de régulation pour t'aider à ralentir lorsque tout va trop vite.</p></div></div>
+        <div class="need-card" style="background:#f9f7f4;border-radius:18px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,0.14);"><img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6ad583b3989628c77a6eab29.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;display:block;"><div style="padding:22px 24px 26px;"><div style="font-family:'Lora',serif;font-size:14px;color:#e09352;margin-bottom:10px;">02</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:19px;margin:0 0 8px;color:#2f4443;">Mieux dormir</h3><p style="font-size:14.5px;margin:0;color:#2f4443;opacity:0.75;">Ateliers, audios et stratégies pour créer une routine qui favorise un sommeil de meilleure qualité.</p></div></div>
+        <div class="need-card" style="background:#f9f7f4;border-radius:18px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,0.14);"><img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6ad583b33cacdd9117b84657.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;display:block;"><div style="padding:22px 24px 26px;"><div style="font-family:'Lora',serif;font-size:14px;color:#e09352;margin-bottom:10px;">03</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:19px;margin:0 0 8px;color:#2f4443;">Mieux comprendre mes hormones</h3><p style="font-size:14.5px;margin:0;color:#2f4443;opacity:0.75;">Ton cycle, les étapes de la vie hormonale féminine et les habitudes qui soutiennent ta santé.</p></div></div>
+        <div class="need-card" style="background:#f9f7f4;border-radius:18px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,0.14);"><img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6ad583b3cd7225ed37dc547b.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;display:block;"><div style="padding:22px 24px 26px;"><div style="font-family:'Lora',serif;font-size:14px;color:#e09352;margin-bottom:10px;">04</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:19px;margin:0 0 8px;color:#2f4443;">Mieux manger</h3><p style="font-size:14.5px;margin:0;color:#2f4443;opacity:0.75;">Recettes, ateliers et outils pratiques pour une alimentation équilibrée, sans rechercher la perfection.</p></div></div>
+        <div class="need-card" style="background:#f9f7f4;border-radius:18px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,0.14);"><img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6ad583b3989628c77a6eab34.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;display:block;"><div style="padding:22px 24px 26px;"><div style="font-family:'Lora',serif;font-size:14px;color:#e09352;margin-bottom:10px;">05</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:19px;margin:0 0 8px;color:#2f4443;">Bouger davantage</h3><p style="font-size:14.5px;margin:0;color:#2f4443;opacity:0.75;">Yoga, mouvement et contenus accessibles pour remettre du mouvement dans ton quotidien.</p></div></div>
+        <div class="need-card" style="background:#f9f7f4;border-radius:18px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,0.14);"><img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6ad583b3f9a985d42c06ad8d.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;display:block;"><div style="padding:22px 24px 26px;"><div style="font-family:'Lora',serif;font-size:14px;color:#e09352;margin-bottom:10px;">06</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:19px;margin:0 0 8px;color:#2f4443;">Prendre soin de moi</h3><p style="font-size:14.5px;margin:0;color:#2f4443;opacity:0.75;">Méditations, introspection, défis et outils pour créer de l'espace pour toi.</p></div></div>
+      </div>
+      <div style="font-size:13px;color:#f9f7f4;opacity:0.6;margin-bottom:36px;">Fais glisser pour voir les 6 →</div>
+      <p style="font-family:'Lora',serif;font-size:20px;color:#f9f7f4;margin:0 0 6px;">Tu n'as pas besoin de faire les six.</p>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:20px;color:#e09352;margin:0 0 32px;">Tu commences simplement par celle dont tu as besoin aujourd'hui.</p>
+      <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15.5px;font-weight:600;color:#3f6462;background:#f9f7f4;padding:16px 32px;border-radius:100px;">Je découvre l'Espace →</a>
+    </div>
+  </section>
+
+  <!-- 4. PAR OÙ COMMENCER -->
+  <section style="background:#f9f7f4;padding:100px 6vw;">
+    <div style="max-width:1000px;margin:0 auto;text-align:center;">
+      <div style="font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#e09352;margin-bottom:16px;">Par où commencer ?</div>
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 16px;color:#2f4443;text-wrap:balance;">100+ ressources ne veut pas dire <span style="font-style:italic;color:#609795;">100 choses à faire.</span></h2>
+      <p style="font-size:17px;opacity:0.75;max-width:560px;margin:0 auto 48px;">C'est justement l'inverse. L'Espace Bien-être est une bibliothèque dans laquelle tu viens chercher l'outil dont tu as besoin.</p>
+      <div class="start-grid" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;text-align:left;">
+        <div style="background:white;border:1px solid #e2ded7;border-radius:16px;padding:26px 22px;box-shadow:0 10px 24px rgba(47,68,67,0.08);"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">1</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:17px;margin:0 0 8px;">Tu identifies ton besoin du moment</h3><p style="font-size:14px;opacity:0.7;margin:0;">Stress? Sommeil? Alimentation? Hormones? Mouvement? Besoin de ralentir?</p></div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:16px;padding:26px 22px;box-shadow:0 10px 24px rgba(47,68,67,0.08);"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">2</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:17px;margin:0 0 8px;">Tu choisis une ressource</h3><p style="font-size:14px;opacity:0.7;margin:0;">Une méditation, une vidéo, un atelier, une recette, une respiration, un défi.</p></div>
+        <div style="background:white;border:1px solid #e2ded7;border-radius:16px;padding:26px 22px;box-shadow:0 10px 24px rgba(47,68,67,0.08);"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">3</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:17px;margin:0 0 8px;">Tu commences</h3><p style="font-size:14px;opacity:0.7;margin:0;">Même si tu as seulement 10 minutes.</p></div>
+        <div style="background:#3f6462;color:#f9f7f4;border-radius:16px;padding:26px 22px;box-shadow:0 14px 28px rgba(63,100,98,0.25);"><div style="width:38px;height:38px;border-radius:50%;background:#e09352;color:white;font-family:'Lora',serif;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">4</div><h3 style="font-family:'Lora',serif;font-weight:500;font-size:17px;margin:0 0 8px;">Tu reviens quand tu en as besoin</h3><p style="font-size:14px;opacity:0.85;margin:0;">Rien à rattraper. Aucun retard. Aucune culpabilité.</p></div>
+      </div>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:19px;color:#609795;margin:40px 0 0;">La plateforme s'adapte à ta vie. Pas l'inverse.</p>
+    </div>
+  </section>
+
+  <!-- 5. LA VALEUR -->
+  <section style="background:#eef2f1;padding:100px 0 90px;">
+    <div style="max-width:1080px;margin:0 auto;padding:0 6vw;text-align:center;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 44px;color:#2f4443;">Et quand tu en as besoin, <span style="font-style:italic;color:#609795;">tout est déjà là.</span></h2>
+      <div class="stat-grid" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:14px;">
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">100+</div><div style="font-size:13.5px;opacity:0.7;">ressources</div></div>
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">20 h+</div><div style="font-size:13.5px;opacity:0.7;">de contenu</div></div>
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">27</div><div style="font-size:13.5px;opacity:0.7;">ateliers guidés</div></div>
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">37</div><div style="font-size:13.5px;opacity:0.7;">lectures</div></div>
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">20</div><div style="font-size:13.5px;opacity:0.7;">vidéos</div></div>
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">11</div><div style="font-size:13.5px;opacity:0.7;">audios</div></div>
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">12</div><div style="font-size:13.5px;opacity:0.7;">défis Métamorphose</div></div>
+        <div style="background:white;border-radius:14px;padding:22px 12px;"><div style="font-family:'Lora',serif;font-size:32px;line-height:1;color:#e09352;margin-bottom:6px;">3</div><div style="font-size:13.5px;opacity:0.7;">outils de régulation</div></div>
+      </div>
+      <p style="font-size:15.5px;opacity:0.75;max-width:720px;margin:28px auto 40px;">Des recettes, du yoga, de la méditation, de la respiration, des ressources sur les hormones et la santé féminine, des outils sur le sommeil, le stress et l'alimentation. Et du nouveau contenu ajouté régulièrement.</p>
+    </div>
+    <div class="platform-scroll" style="display:grid;grid-auto-flow:column;grid-auto-columns:260px;gap:16px;overflow-x:auto;padding:0 6vw 12px;-webkit-overflow-scrolling:touch;margin-bottom:36px;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f598.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f58d.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f594.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf699074f5ef67949ec.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6cf50f900f226f588.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+      <img src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a7efcf6fe4291bd103d7afb.png" alt="Aperçu plateforme" style="width:100%;height:auto;border-radius:14px;display:block;">
+    </div>
+    <p style="font-family:'Lora',serif;font-style:italic;font-size:19px;color:#3f6462;text-align:center;max-width:620px;margin:0 auto;padding:0 6vw;">Tu n'as pas besoin de tout consommer. Mais tu sais que lorsque tu en as besoin, la ressource est là.</p>
+  </section>
+
+  <!-- 6. IMAGINE -->
+  <section style="background:#3f6462;color:#f9f7f4;padding:100px 6vw;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 48px;line-height:1.3;text-wrap:balance;">Imagine ne plus avoir à recommencer à zéro <span style="font-style:italic;color:#e09352;">chaque fois que la vie devient plus chargée.</span></h2>
+      <div class="scenario-grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;text-align:left;margin-bottom:44px;">
+        <div style="background:rgba(249,247,244,0.08);border:1px solid rgba(249,247,244,0.15);border-radius:14px;padding:20px 22px;"><div style="font-family:'Lora',serif;font-style:italic;font-size:17px;color:#e09352;margin-bottom:4px;">Tu as eu une semaine stressante?</div><div style="font-size:15px;opacity:0.9;">Tu sais où trouver une respiration ou une méditation.</div></div>
+        <div style="background:rgba(249,247,244,0.08);border:1px solid rgba(249,247,244,0.15);border-radius:14px;padding:20px 22px;"><div style="font-family:'Lora',serif;font-style:italic;font-size:17px;color:#e09352;margin-bottom:4px;">Ton sommeil est moins bon?</div><div style="font-size:15px;opacity:0.9;">Tu retournes vers les ressources sommeil.</div></div>
+        <div style="background:rgba(249,247,244,0.08);border:1px solid rgba(249,247,244,0.15);border-radius:14px;padding:20px 22px;"><div style="font-family:'Lora',serif;font-style:italic;font-size:17px;color:#e09352;margin-bottom:4px;">Tu veux recommencer à mieux manger?</div><div style="font-size:15px;opacity:0.9;">Tes recettes et tes ateliers sont déjà là.</div></div>
+        <div style="background:rgba(249,247,244,0.08);border:1px solid rgba(249,247,244,0.15);border-radius:14px;padding:20px 22px;"><div style="font-family:'Lora',serif;font-style:italic;font-size:17px;color:#e09352;margin-bottom:4px;">Tu veux comprendre ton cycle?</div><div style="font-size:15px;opacity:0.9;">Tu sais où chercher.</div></div>
+        <div style="grid-column:1 / -1;background:rgba(249,247,244,0.08);border:1px solid rgba(249,247,244,0.15);border-radius:14px;padding:20px 22px;"><div style="font-family:'Lora',serif;font-style:italic;font-size:17px;color:#e09352;margin-bottom:4px;">Tu as seulement 15 minutes?</div><div style="font-size:15px;opacity:0.9;">Tu choisis quelque chose qui entre dans 15 minutes.</div></div>
+      </div>
+      <p style="font-size:17px;opacity:0.85;max-width:600px;margin:0 auto;">L'objectif n'est pas de devenir parfaite. C'est d'avoir <em style="font-family:'Lora',serif;color:#e09352;">un endroit où revenir encore et encore</em> pour continuer à prendre soin de toi.</p>
+    </div>
+  </section>
+
+  <!-- 7. AVANT / APRÈS -->
+  <section style="background:#f9f7f4;padding:100px 6vw;">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="avant-apres-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;">
+        <div style="background:white;border-radius:18px;padding:36px 32px;box-shadow:0 14px 30px rgba(47,68,67,0.08);border:1px solid #e2ded7;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;"><div style="width:30px;height:30px;border-radius:50%;background:#f3ece4;color:#c17a44;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;">✕</div><div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#2f4443;opacity:0.6;font-weight:600;">Avant l'Espace Bien-être</div></div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:15.5px;opacity:0.8;">Tu sauvegardes du contenu partout</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:15.5px;opacity:0.8;">Tu achètes différentes petites ressources séparément</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:15.5px;opacity:0.8;">Tu ne sais plus qui écouter</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:15.5px;opacity:0.8;">Tu essaies de tout faire en même temps</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:15.5px;opacity:0.8;">Tu recommences constamment</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:15.5px;opacity:0.8;">Tu te sens coupable lorsque tu perds ta routine</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#c17a44;">✕</span><span style="font-size:15.5px;opacity:0.8;">Tu cherches toujours une nouvelle solution</span></div>
+          </div>
+        </div>
+        <div style="background:#3f6462;border-radius:18px;padding:36px 32px;box-shadow:0 20px 40px rgba(63,100,98,0.3);position:relative;overflow:hidden;color:#f9f7f4;">
+          <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:#e09352;filter:blur(70px);opacity:0.35;top:-70px;right:-60px;"></div>
+          <div style="position:relative;display:flex;align-items:center;gap:10px;margin-bottom:22px;"><div style="width:30px;height:30px;border-radius:50%;background:#e09352;color:white;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;">✓</div><div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#e09352;font-weight:700;">Avec l'Espace Bien-être</div></div>
+          <div style="position:relative;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:15.5px;font-weight:500;">Tes ressources sont au même endroit</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:15.5px;font-weight:500;">Tu choisis selon ton besoin actuel</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:15.5px;font-weight:500;">Tu peux commencer avec quelques minutes</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:15.5px;font-weight:500;">Tu avances à ton rythme</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:15.5px;font-weight:500;">Tu développes ta propre boîte à outils</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:15.5px;font-weight:500;">Tu reviens aux ressources quand tu en as besoin</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-size:15.5px;font-weight:500;">Tu arrêtes de croire que prendre soin de toi doit être compliqué</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;"><a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15px;font-weight:600;color:white;background:#e09352;padding:15px 30px;border-radius:100px;">Je rejoins l'Espace Bien-être →</a></div>
+    </div>
+  </section>
+
+  <!-- 8. DÉFIS MÉTAMORPHOSE -->
+  <section style="background:#eef2f1;padding:90px 6vw;text-align:center;">
+    <div style="max-width:720px;margin:0 auto;">
+      <div style="font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#e09352;margin-bottom:16px;">Les défis Métamorphose</div>
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 24px;color:#2f4443;">Tu ne sais pas par quoi commencer? <span style="font-style:italic;color:#609795;">Commence par un défi.</span></h2>
+      <p style="font-size:17px;opacity:0.8;margin:0 0 30px;text-wrap:pretty;">Les défis Métamorphose t'aident à te concentrer sur <strong style="font-weight:600;">une</strong> habitude à la fois. Pendant le défi, tu as une direction claire et une action concrète à intégrer dans ton quotidien.</p>
+      <div style="display:flex;justify-content:center;align-items:center;gap:18px;font-family:'Lora',serif;">
+        <span style="font-size:26px;opacity:0.35;text-decoration:line-through;">Pas dix.</span>
+        <span style="font-size:40px;font-style:italic;color:#e09352;">Une.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. QUI JE SUIS -->
+  <section style="background:#f9f7f4;padding:100px 0;">
+    <div class="story-grid" style="max-width:1080px;margin:0 auto;padding:0 6vw;display:grid;grid-template-columns:0.62fr 1.38fr;gap:56px;align-items:center;">
+      <img class="story-img" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a4b17e11209780f804b639f.png" alt="Chantal" style="width:100%;aspect-ratio:3/4;border-radius:10px;object-fit:cover;object-position:center top;">
+      <div>
+        <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(28px,3.2vw,38px);margin:0 0 22px;color:#2f4443;">J'ai créé l'espace <span style="font-style:italic;color:#609795;">que j'aurais aimé avoir.</span></h2>
+        <p style="font-size:16.5px;opacity:0.8;margin:0 0 16px;text-wrap:pretty;">Je suis Chantal, naturopathe spécialisée en santé hormonale féminine, digestion et système nerveux. Depuis des années, j'accompagne des femmes qui veulent prendre soin d'elles, mais qui sont complètement dépassées par la quantité d'informations disponibles.</p>
+        <p style="font-size:16.5px;opacity:0.8;margin:0 0 16px;text-wrap:pretty;">Parce qu'aujourd'hui, prendre soin de sa santé peut presque devenir une job à temps plein. Manger parfaitement. S'entraîner. Méditer. Dormir 8 heures. Gérer son stress. Comprendre ses hormones. Faire 10 000 pas.</p>
+        <p style="font-size:16.5px;opacity:0.8;margin:0 0 22px;text-wrap:pretty;">Et franchement? Personne n'a besoin d'une autre liste de choses qu'elle ne réussit pas à faire.</p>
+        <p style="font-family:'Lora',serif;font-style:italic;font-size:19px;color:#609795;margin:0;">J'ai créé l'Espace Bien-être pour faire exactement l'inverse : te donner un endroit où revenir, choisir ce dont tu as besoin, et prendre soin de toi, une chose à la fois.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. TÉMOIGNAGES (à remplacer par les témoignages d'utilisation réels) -->
+  <section style="background:#eef2f1;padding:90px 6vw;">
+    <div style="max-width:1160px;margin:0 auto;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 44px;text-align:center;color:#2f4443;">Comment elles utilisent <span style="font-style:italic;color:#609795;">leur Espace</span></h2>
+      <div class="testimonial-grid" style="display:grid;grid-auto-flow:column;grid-auto-columns:340px;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:6vw;margin:0 -6vw;padding:8px 6vw 20px;-webkit-overflow-scrolling:touch;">
+        <div style="background:white;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;"><div style="font-size:12.5px;font-weight:600;color:#e09352;text-transform:uppercase;letter-spacing:0.05em;">Pourquoi t'es-tu inscrite?</div><p style="font-family:'Lora',serif;font-style:italic;font-size:16px;margin:0;flex:1;">« J'avais 200 Reels sauvegardés et je n'en appliquais aucun. Je voulais un seul endroit où aller, avec quelqu'un en qui j'ai confiance. »</p><div><div style="font-size:14px;font-weight:600;">Julie</div><div style="font-size:13px;opacity:0.6;">Sherbrooke · membre depuis 8 mois</div></div></div>
+        <div style="background:white;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;"><div style="font-size:12.5px;font-weight:600;color:#e09352;text-transform:uppercase;letter-spacing:0.05em;">Qu'est-ce que tu utilises le plus?</div><p style="font-family:'Lora',serif;font-style:italic;font-size:16px;margin:0;flex:1;">« Les respirations. J'en fais une dans l'auto avant d'entrer au travail, 5 minutes, et ma journée commence complètement autrement. »</p><div><div style="font-size:14px;font-weight:600;">Annie</div><div style="font-size:13px;opacity:0.6;">Québec · membre depuis 1 an</div></div></div>
+        <div style="background:white;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;"><div style="font-size:12.5px;font-weight:600;color:#e09352;text-transform:uppercase;letter-spacing:0.05em;">Quelle est ta ressource préférée?</div><p style="font-family:'Lora',serif;font-style:italic;font-size:16px;margin:0;flex:1;">« L'atelier sur le cycle hormonal. Pour la première fois, je comprends pourquoi je n'ai pas la même énergie d'une semaine à l'autre. »</p><div><div style="font-size:14px;font-weight:600;">Catherine</div><div style="font-size:13px;opacity:0.6;">Trois-Rivières · membre depuis 5 mois</div></div></div>
+        <div style="background:white;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;"><div style="font-size:12.5px;font-weight:600;color:#e09352;text-transform:uppercase;letter-spacing:0.05em;">Comment utilises-tu l'Espace au quotidien?</div><p style="font-family:'Lora',serif;font-style:italic;font-size:16px;margin:0;flex:1;">« Le soir, une fois les enfants couchés, je choisis selon ma journée : une méditation si j'ai été stressée, une recette pour planifier le lendemain. »</p><div><div style="font-size:14px;font-weight:600;">Mélanie</div><div style="font-size:13px;opacity:0.6;">Laval · membre depuis 10 mois</div></div></div>
+        <div style="background:white;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;"><div style="font-size:12.5px;font-weight:600;color:#e09352;text-transform:uppercase;letter-spacing:0.05em;">Est-ce facile de savoir par où commencer?</div><p style="font-family:'Lora',serif;font-style:italic;font-size:16px;margin:0;flex:1;">« J'avais peur d'être perdue avec tout ce contenu. J'ai commencé par un défi Métamorphose, une habitude à la fois, et ça m'a donné une direction. »</p><div><div style="font-size:14px;font-weight:600;">Valérie</div><div style="font-size:13px;opacity:0.6;">Gatineau · membre depuis 3 mois</div></div></div>
+        <div style="background:white;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;"><div style="font-size:12.5px;font-weight:600;color:#e09352;text-transform:uppercase;letter-spacing:0.05em;">Pourquoi continues-tu d'être membre?</div><p style="font-family:'Lora',serif;font-style:italic;font-size:16px;margin:0;flex:1;">« Parce que je ne recommence plus à zéro. Quand la vie devient chargée, je sais exactement où revenir. »</p><div><div style="font-size:14px;font-weight:600;">Isabelle</div><div style="font-size:13px;opacity:0.6;">Saguenay · membre depuis 1 an</div></div></div>
+      </div>
+      <div style="text-align:center;font-size:13px;opacity:0.55;margin-top:6px;">Fais glisser pour lire les témoignages →</div>
+    </div>
+  </section>
+
+  <!-- 11. INCLUS -->
+  <section style="background:#3f6462;padding:90px 6vw;">
+    <div style="max-width:820px;margin:0 auto;text-align:center;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 40px;color:#f9f7f4;">Tout ceci est aussi <span style="font-style:italic;color:#e09352;">inclus dans ton abonnement</span></h2>
+      <div class="bonus-list" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left;">
+        <div style="background:#f9f7f4;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-family:'Lora',serif;font-size:16px;">Bibliothèque de méditations</span></div>
+        <div style="background:#f9f7f4;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-family:'Lora',serif;font-size:16px;">Bibliothèque de respirations</span></div>
+        <div style="background:#f9f7f4;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-family:'Lora',serif;font-size:16px;">Ateliers d'écriture et d'introspection</span></div>
+        <div style="background:#f9f7f4;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-family:'Lora',serif;font-size:16px;">Lives exclusifs <span style="font-family:'Work Sans',sans-serif;font-size:13px;opacity:0.6;">(à venir)</span></span></div>
+        <div style="background:#f9f7f4;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-family:'Lora',serif;font-size:16px;">Défis Métamorphose</span></div>
+        <div style="background:#f9f7f4;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;"><span style="color:#e09352;font-weight:700;">✓</span><span style="font-family:'Lora',serif;font-size:16px;">40 % de rabais sur les ebooks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12-13. PRIX -->
+  <section id="pricing" style="max-width:1120px;margin:0 auto;padding:100px 6vw;text-align:center;">
+    <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(26px,3vw,36px);margin:0 0 44px;color:#2f4443;text-wrap:balance;">Prendre soin de toi pour le prix de <span style="font-style:italic;color:#609795;">quelques cafés par mois.</span></h2>
+    <div class="price-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;text-align:left;align-items:stretch;">
+      <div style="background:white;padding:30px 26px;border-radius:16px;border:1px solid #e2ded7;display:flex;flex-direction:column;">
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;opacity:0.65;margin-bottom:12px;">Mensuel</div>
+        <div style="font-family:'Lora',serif;font-size:34px;line-height:1;margin-bottom:8px;">19,99 $<span style="font-size:15px;opacity:0.6;font-family:'Work Sans',sans-serif;"> /mois</span></div>
+        <div style="font-size:13.5px;opacity:0.7;margin-bottom:14px;">Facturé chaque mois. Valide jusqu'à annulation.</div>
+        <div style="display:inline-block;align-self:flex-start;background:#eef2f1;color:#3f6462;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:100px;margin-bottom:18px;">7 jours d'essai gratuit</div>
+        <div style="font-size:14px;opacity:0.8;margin-bottom:24px;flex:1;">Accès à l'ensemble de la plateforme, mois après mois.</div>
+        <a href="https://www.chantallefrancoisnaturopathe.com/pricing-plans/checkout-1?planId=f4a4f417-9c4a-42d9-9671-9c60db5cda64&checkoutFlowId=35e24a46-b301-4f4e-b99c-bf0adc45412a" style="display:block;text-align:center;padding:14px;border-radius:100px;background:#609795;color:white;font-weight:600;text-decoration:none;font-size:14px;">Je choisis le mensuel</a>
+      </div>
+      <div style="background:white;padding:30px 26px;border-radius:16px;border:1px solid #e2ded7;display:flex;flex-direction:column;">
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;opacity:0.65;margin-bottom:12px;">6 mois</div>
+        <div style="font-family:'Lora',serif;font-size:34px;line-height:1;margin-bottom:8px;">17,99 $<span style="font-size:15px;opacity:0.6;font-family:'Work Sans',sans-serif;"> /mois</span></div>
+        <div style="font-size:13.5px;opacity:0.7;margin-bottom:22px;"><strong style="font-weight:600;">107,99 $ CAD</strong> facturé aux 6 mois. Paiement unique.</div>
+        <div style="font-size:14px;opacity:0.8;margin-bottom:24px;flex:1;">Accès à l'ensemble de la plateforme pendant 6 mois.</div>
+        <a href="https://www.chantallefrancoisnaturopathe.com/pricing-plans/checkout-1?planId=6c677bd4-4683-4152-b591-bbb3d70cce8e&checkoutFlowId=328565c7-a2d4-4924-bc44-bfd8d859c651" style="display:block;text-align:center;padding:14px;border-radius:100px;background:#609795;color:white;font-weight:600;text-decoration:none;font-size:14px;">Je choisis 6 mois</a>
+      </div>
+      <div style="background:#3f6462;color:#f9f7f4;padding:30px 26px;border-radius:16px;position:relative;display:flex;flex-direction:column;box-shadow:0 20px 40px rgba(63,100,98,0.3);">
+        <div style="position:absolute;top:-13px;left:26px;background:#e09352;color:white;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;">Meilleure valeur</div>
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;opacity:0.7;margin-bottom:12px;">12 mois</div>
+        <div style="font-family:'Lora',serif;font-size:34px;line-height:1;margin-bottom:8px;">16,66 $<span style="font-size:15px;opacity:0.7;font-family:'Work Sans',sans-serif;"> /mois</span></div>
+        <div style="font-size:13.5px;opacity:0.8;margin-bottom:22px;"><strong style="font-weight:600;">199,99 $ CAD</strong> facturé annuellement. Paiement unique.</div>
+        <div style="font-size:14px;opacity:0.9;margin-bottom:24px;flex:1;">Une année complète pour utiliser les ressources à ton rythme et construire progressivement tes habitudes.</div>
+        <a href="https://www.chantallefrancoisnaturopathe.com/pricing-plans/checkout-1?planId=a3c8578d-7120-4b87-b277-35b516eec1f5&checkoutFlowId=a56bf21a-486b-46a4-8a7a-9e8873fbb8df" style="display:block;text-align:center;padding:14px;border-radius:100px;background:#e09352;color:white;font-weight:600;text-decoration:none;font-size:14px;">Je choisis 12 mois</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. FAQ -->
+  <section style="background:#eef2f1;padding:100px 6vw;">
+    <div style="max-width:760px;margin:0 auto;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(28px,3.2vw,36px);margin:0 0 44px;text-align:center;color:#2f4443;">Questions fréquentes</h2>
+      <div style="display:flex;flex-direction:column;">
+        <div class="faq-item" style="border-bottom:1px solid #d5e0de;"><div onclick="this.parentElement.classList.toggle('open')" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;"><div style="font-family:'Lora',serif;font-size:17px;font-weight:500;">Est-ce que je dois tout regarder?</div><div class="faq-icon" style="width:26px;height:26px;border-radius:50%;background:#dbe4e2;color:#3f6462;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;transition:all 0.25s;">+</div></div><div class="faq-body"><div style="font-size:15px;opacity:0.75;padding-bottom:22px;">Non. L'Espace Bien-être n'est pas un cours que tu dois terminer. Tu choisis les ressources selon tes besoins.</div></div></div>
+        <div class="faq-item" style="border-bottom:1px solid #d5e0de;"><div onclick="this.parentElement.classList.toggle('open')" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;"><div style="font-family:'Lora',serif;font-size:17px;font-weight:500;">Combien de temps dois-je y consacrer?</div><div class="faq-icon" style="width:26px;height:26px;border-radius:50%;background:#dbe4e2;color:#3f6462;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;transition:all 0.25s;">+</div></div><div class="faq-body"><div style="font-size:15px;opacity:0.75;padding-bottom:22px;">Certaines ressources se font en quelques minutes. Tu peux choisir des ateliers plus longs lorsque tu as davantage de temps.</div></div></div>
+        <div class="faq-item" style="border-bottom:1px solid #d5e0de;"><div onclick="this.parentElement.classList.toggle('open')" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;"><div style="font-family:'Lora',serif;font-size:17px;font-weight:500;">Par où commencer?</div><div class="faq-icon" style="width:26px;height:26px;border-radius:50%;background:#dbe4e2;color:#3f6462;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;transition:all 0.25s;">+</div></div><div class="faq-body"><div style="font-size:15px;opacity:0.75;padding-bottom:22px;">Tu peux commencer par ton besoin le plus présent actuellement ou par l'un des défis Métamorphose.</div></div></div>
+        <div class="faq-item" style="border-bottom:1px solid #d5e0de;"><div onclick="this.parentElement.classList.toggle('open')" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;"><div style="font-family:'Lora',serif;font-size:17px;font-weight:500;">Est-ce que de nouveaux contenus sont ajoutés?</div><div class="faq-icon" style="width:26px;height:26px;border-radius:50%;background:#dbe4e2;color:#3f6462;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;transition:all 0.25s;">+</div></div><div class="faq-body"><div style="font-size:15px;opacity:0.75;padding-bottom:22px;">Oui, de nouvelles ressources sont ajoutées régulièrement.</div></div></div>
+        <div class="faq-item" style="border-bottom:1px solid #d5e0de;"><div onclick="this.parentElement.classList.toggle('open')" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;"><div style="font-family:'Lora',serif;font-size:17px;font-weight:500;">Est-ce que j'ai accès à tout immédiatement?</div><div class="faq-icon" style="width:26px;height:26px;border-radius:50%;background:#dbe4e2;color:#3f6462;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;transition:all 0.25s;">+</div></div><div class="faq-body"><div style="font-size:15px;opacity:0.75;padding-bottom:22px;">Oui. La bibliothèque est accessible dès ton inscription.</div></div></div>
+        <div class="faq-item" style="border-bottom:1px solid #d5e0de;"><div onclick="this.parentElement.classList.toggle('open')" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;"><div style="font-family:'Lora',serif;font-size:17px;font-weight:500;">Est-ce que l'Espace Bien-être remplace un suivi individuel?</div><div class="faq-icon" style="width:26px;height:26px;border-radius:50%;background:#dbe4e2;color:#3f6462;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;transition:all 0.25s;">+</div></div><div class="faq-body"><div style="font-size:15px;opacity:0.75;padding-bottom:22px;">Non. Il s'agit d'une bibliothèque de ressources et d'outils éducatifs à utiliser de façon autonome.</div></div></div>
+        <div class="faq-item" style="border-bottom:1px solid #d5e0de;"><div onclick="this.parentElement.classList.toggle('open')" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;"><div style="font-family:'Lora',serif;font-size:17px;font-weight:500;">Comment fonctionne l'abonnement?</div><div class="faq-icon" style="width:26px;height:26px;border-radius:50%;background:#dbe4e2;color:#3f6462;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;transition:all 0.25s;">+</div></div><div class="faq-body"><div style="font-size:15px;opacity:0.75;padding-bottom:22px;">Mensuel : 19,99 $ facturé chaque mois, valide jusqu'à annulation, avec 7 jours d'essai gratuit. 6 mois : 107,99 $ facturé aux 6 mois. 12 mois : 199,99 $ facturé annuellement.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. CTA FINAL -->
+  <section style="position:relative;overflow:hidden;background:radial-gradient(circle at 70% 30%,#3f6462,#2f4443 70%);color:#f9f7f4;padding:110px 6vw;text-align:center;">
+    <div style="position:absolute;width:340px;height:340px;border-radius:50%;background:#e09352;filter:blur(100px);opacity:0.3;bottom:-120px;left:-80px;"></div>
+    <div style="position:relative;max-width:720px;margin:0 auto;">
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);margin:0 0 22px;line-height:1.25;text-wrap:balance;">Tu n'as pas besoin de tout changer <span style="font-style:italic;color:#e09352;">pour commencer à prendre soin de toi.</span></h2>
+      <p style="font-size:17px;opacity:0.88;margin:0 0 16px;">Tu as simplement besoin d'un endroit où commencer.</p>
+      <p style="font-size:17px;opacity:0.88;margin:0 0 30px;text-wrap:pretty;">Et la prochaine fois que tu auras besoin d'aide pour ton sommeil, ton stress, ton alimentation, tes hormones ou simplement pour ralentir… <em style="font-family:'Lora',serif;color:#e09352;">ton Espace sera déjà là.</em></p>
+      <div style="font-size:14px;letter-spacing:0.04em;opacity:0.8;margin-bottom:10px;">100+ ressources · Un seul endroit · À ton rythme</div>
+      <p style="font-size:15px;opacity:0.85;margin:0 0 28px;">À partir de 16,66 $/mois avec l'abonnement annuel (199,99 $ facturé annuellement)</p>
+      <a href="#pricing" style="display:inline-block;text-decoration:none;font-size:15.5px;font-weight:600;color:white;background:#e09352;padding:17px 34px;border-radius:100px;">Je rejoins l'Espace Bien-être →</a>
+    </div>
+  </section>
+
+  <!-- PLAN B : 45 RECETTES -->
+  <section id="recettes" class="optin-grid" style="max-width:1000px;margin:60px auto;padding:44px 6vw;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;border:1px solid #e2ded7;border-radius:20px;">
+    <div>
+      <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(22px,2.4vw,28px);margin:0 0 10px;color:#2f4443;">Pas encore prête à rejoindre l'Espace?</h2>
+      <p style="font-size:15.5px;opacity:0.75;max-width:440px;margin:0 0 20px;">Commence gratuitement avec mes <strong style="font-weight:600;color:#609795;">45 recettes santé et savoureuses</strong>.</p>
+      <div id="recette-thanks" style="display:none;background:#eef2f1;border-radius:14px;padding:14px 20px;font-size:14.5px;color:#3f6462;max-width:420px;">Merci ! Va vérifier tes courriels (et ton dossier pourriel/indésirables).</div>
+      <!-- Remplace ce <form> par ton formulaire GHL réel connecté à la séquence courriel -->
+      <form id="recette-form" style="display:flex;gap:10px;max-width:420px;">
+        <input type="email" required placeholder="Ton adresse courriel" style="flex:1;min-width:160px;padding:13px 16px;border:1px solid #e2ded7;border-radius:100px;background:white;font-size:14.5px;font-family:inherit;outline:none;">
+        <button type="submit" style="padding:13px 22px;border:none;border-radius:100px;background:#609795;color:white;font-size:14.5px;font-weight:600;cursor:pointer;white-space:nowrap;">Recevoir</button>
+      </form>
+    </div>
+    <img class="optin-img" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a4ba2c8a97402b00b8a503c.png" alt="45 Recettes" style="width:200px;height:200px;border-radius:10px;object-fit:contain;background:white;">
+  </section>
+
+  <footer style="padding:36px 6vw;text-align:center;font-size:13px;opacity:0.5;border-top:1px solid #e2ded7;">
+    Chantal Lefrançois, Naturopathe — 327 Bd Curé-Labelle, suite 309, Laval, QC
+  </footer>
+
+<script>
+  document.getElementById('recette-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('recette-thanks').style.display = 'block';
+  });
+</script>
+</body>
+</html>
