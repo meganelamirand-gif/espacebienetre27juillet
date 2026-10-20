@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reset des 7 Hormones Clés — Le protocole perte de poids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#FDFBF7;font-family:'Work Sans',sans-serif;color:#2B2B26;overflow-x:hidden;}
+  a{color:#609795;text-decoration:none;} a:hover{color:#4d7a78;}
+  img{max-width:100%;display:block;}
+  section{padding:96px 24px;}
+  .wrap{max-width:900px;margin:0 auto;}
+  .narrow{max-width:720px;margin:0 auto;}
+  .center{text-align:center;}
+  .eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#E09352;font-weight:600;margin-bottom:16px;}
+  h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:400;text-wrap:balance;}
+  h2{font-size:30px;line-height:1.3;margin:0 0 20px;}
+  h3{font-size:20px;line-height:1.35;margin:0 0 10px;}
+  p{line-height:1.7;margin:0 0 16px;text-wrap:pretty;}
+  .lead{font-size:18px;color:#4a4a42;}
+  .muted{color:#5a5a50;}
+  .accent{color:#E09352;font-style:italic;}
+  .btn{display:inline-block;background:#E09352;color:#fff !important;font-weight:600;font-size:16px;padding:15px 34px;border-radius:100px;box-shadow:0 8px 24px rgba(224,147,82,0.32);white-space:nowrap;transition:transform .2s;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-sub{font-size:13px;color:#7a7a70;margin-top:14px;}
+  .card{background:#fff;border-radius:20px;padding:30px;box-shadow:0 8px 24px rgba(43,43,38,0.05);}
+  .chip{display:inline-block;background:#EFF5F4;color:#609795;font-size:13px;font-weight:600;padding:6px 14px;border-radius:100px;}
+  .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+  .check{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.5;cursor:pointer;text-align:left;}
+  .check input{flex-shrink:0;width:22px;height:22px;margin-top:2px;accent-color:#609795;cursor:pointer;}
+  .dot{flex-shrink:0;width:9px;height:9px;margin-top:9px;background:#609795;transform:rotate(45deg);}
+  .marquee{background:#609795;overflow:hidden;padding:12px 0;white-space:nowrap;}
+  .marquee div{display:inline-block;animation:marquee 26s linear infinite;}
+  .marquee span{display:inline-block;padding:0 36px;color:#fff;font-size:14px;font-weight:500;}
+  .leaf{position:absolute;pointer-events:none;}
+  .leaf div{width:100%;height:100%;animation:float 4.5s ease-in-out infinite;}
+  /* Section 2 : barré animé */
+  .try{position:relative;display:inline-block;font-family:'Libre Baskerville',serif;font-size:21px;color:#5a5a50;opacity:0;transform:translateY(10px);transition:opacity .5s, transform .5s, color .5s;}
+  .try::after{content:"";position:absolute;left:-4px;top:55%;height:2px;width:0;background:#E09352;transition:width .45s ease-out;}
+  .try.in{opacity:1;transform:none;}
+  .try.in.struck{color:#a4a49a;}
+  .try.in.struck::after{width:calc(100% + 8px);}
+  .stop{font-family:'Libre Baskerville',serif;font-size:56px;color:#E09352;letter-spacing:4px;opacity:0;transform:scale(.8);transition:all .6s cubic-bezier(.2,1.4,.4,1);}
+  .stop.in{opacity:1;transform:scale(1);}
+  /* Hormones */
+  .horm{background:#fff;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .2s, box-shadow .2s;}
+  .horm:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(43,43,38,0.08);}
+  .horm-n{width:40px;height:40px;border-radius:50%;background:#EFF5F4;color:#609795;display:flex;align-items:center;justify-content:center;font-family:'Libre Baskerville',serif;font-weight:700;}
+  .horm-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:#9a9a90;margin-bottom:2px;}
+  .horm p{font-size:14.5px;line-height:1.55;margin:0;color:#4a4a42;}
+  #horm-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  #horm-track::-webkit-scrollbar{display:none;}
+  #horm-track .horm{flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;}
+  .horm-nav{position:absolute;top:45%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:#fff;color:#609795;font-size:26px;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(43,43,38,0.12);z-index:2;}
+  .horm-nav:hover{background:#609795;color:#fff;}
+  .hdot{width:8px;height:8px;border-radius:50%;background:#cfdedd;border:none;padding:0;cursor:pointer;transition:all .3s;}
+  .hdot.on{background:#609795;width:22px;border-radius:100px;}
+  .car{position:relative;}
+  .ctrack{display:flex !important;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .ctrack::-webkit-scrollbar{display:none;}
+  .ctrack > *{flex:0 0 calc((100% - (var(--per) - 1) * 20px) / var(--per));scroll-snap-align:start;min-width:0;}
+  .ctrack img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;}
+  .ctrack.phases .phase{grid-template-columns:1fr;gap:16px;padding:28px;}
+  .ctrack.phases .phase-badge{display:flex;align-items:center;gap:12px;padding:10px 16px;}
+  .ctrack.phases .phase-badge b{font-size:24px;}
+  .cnav{position:absolute;top:45%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:#fff;color:#609795;font-size:26px;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(43,43,38,0.12);z-index:2;}
+  .cnav:hover{background:#609795;color:#fff;}
+  .cdots{display:flex;justify-content:center;gap:8px;margin-top:14px;}
+  .car.static .cnav{display:none;}
+  /* Phases */
+  .phase{position:relative;display:grid;grid-template-columns:120px minmax(0,1fr);gap:28px;background:#fff;border-radius:24px;padding:36px;box-shadow:0 8px 24px rgba(43,43,38,0.06);}
+  .phase-badge{border-radius:16px;padding:16px 10px;text-align:center;color:#fff;align-self:start;}
+  .phase-badge b{display:block;font-family:'Libre Baskerville',serif;font-size:34px;line-height:1;}
+  .phase-badge span{font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:600;}
+  .bullets{display:grid;gap:8px;margin:16px 0;}
+  .bullets div{display:flex;gap:12px;font-size:16px;}
+  .bullets div::before{content:"✓";color:#609795;font-weight:700;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s, transform .7s;}
+  .reveal.in{opacity:1;transform:none;}
+  /* FAQ */
+  .faq{background:#fff;border-radius:14px;padding:22px 26px;cursor:pointer;}
+  .faq-q{display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:16px;}
+  .faq-q span:last-child{color:#E09352;font-size:20px;line-height:1;}
+  .faq-a{display:none;color:#5a5a50;line-height:1.65;margin:14px 0 0;font-size:15px;}
+  .faq.open .faq-a{display:block;}
+  @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(24px);}}
+  @media (max-width:1000px) and (min-width:721px){ #horm-track .horm{flex:0 0 calc((100% - 20px) / 2);} }
+  @media (max-width:720px){
+    .lead-grid{grid-template-columns:110px minmax(0,1fr) !important;gap:14px !important;padding:16px !important;align-items:center !important;}
+    .lead-grid .eyebrow{font-size:10px !important;letter-spacing:1px;}
+    .lead-grid h3{font-size:15px !important;}
+    .lead-grid p{font-size:12.5px !important;line-height:1.5;margin-bottom:12px;}
+    .lead-grid .btn{font-size:13px;padding:11px 16px;}
+    .btn{white-space:normal !important;max-width:100%;text-align:center;}
+    #prix .btn{display:block;margin:0 auto;}
+    .forwho{grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;gap:10px !important;}
+    .forwho .card{padding:14px !important;border-radius:16px;}
+    .forwho .eyebrow{font-size:10px;letter-spacing:1px;margin-bottom:10px;}
+    .forwho .check{font-size:12px !important;gap:6px;line-height:1.35;}
+    .forwho > div > div{gap:9px !important;}
+    .sym-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;gap:12px !important;align-items:start !important;}
+    .sym-grid #check-list{gap:10px !important;}
+    .sym-grid .check{font-size:12.5px;gap:7px;line-height:1.35;}
+    .sym-grid .check input{width:16px;height:16px;margin-top:0;}
+    .sym-grid #check-msg{font-size:12px !important;padding:10px !important;}
+    .sym-grid > div:last-child{padding:16px !important;border-radius:16px !important;}
+    .sym-grid > div:last-child .eyebrow{font-size:10px;letter-spacing:1px;margin-bottom:8px;}
+    .sym-grid > div:last-child h3{font-size:15px !important;}
+    .sym-grid > div:last-child p{font-size:12.5px !important;line-height:1.5;}
+    .steps3{flex-wrap:nowrap !important;gap:5px !important;}
+    .steps3 .chip{font-size:10.5px;padding:6px 8px;white-space:normal;line-height:1.25;text-align:center;flex:1 1 0;min-width:0;}
+    .steps3 > span:not(.chip){flex:0 0 auto;font-size:12px;}
+    section{padding:60px 20px !important;}
+    h1{font-size:27px !important;}
+    h2{font-size:23px !important;}
+    .lead{font-size:16px;}
+    .btn{font-size:14px;padding:14px 22px;}
+    .grid2,.grid3,.compare,.chantal-grid,.lead-grid{grid-template-columns:1fr !important;}
+    #horm-track .horm{flex:0 0 84%;}
+    .ctrack > *{flex-basis:calc((100% - (var(--per-m) - 1) * 14px) / var(--per-m));}
+    .ctrack{gap:14px;}
+    .cnav{display:none;}
+    .horm-nav{display:none;}
+    .results{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+    .gets{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important;}
+    .gets .card{padding:18px !important;}
+    .gets h3{font-size:16px !important;}
+    .gets p{font-size:13.5px !important;}
+    .phase{grid-template-columns:1fr !important;padding:24px !important;gap:16px !important;}
+    .phase-badge{display:flex;align-items:center;gap:12px;justify-content:flex-start;padding:10px 16px;}
+    .phase-badge b{font-size:24px;}
+    .compare-arrow{transform:rotate(90deg);}
+    .try{font-size:18px;}
+    .stop{font-size:42px;}
+    .card{padding:22px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="marquee">
+  <div><span>✦ Plus de 1 200 femmes ont déjà suivi cette méthode</span><span>✦ 3 semaines de Reset · 3 semaines de réintroduction · Les bases pour la vraie vie</span><span>✦ Plus de 1 200 femmes ont déjà suivi cette méthode</span><span>✦ 3 semaines de Reset · 3 semaines de réintroduction · Les bases pour la vraie vie</span></div><div><span>✦ Plus de 1 200 femmes ont déjà suivi cette méthode</span><span>✦ 3 semaines de Reset · 3 semaines de réintroduction · Les bases pour la vraie vie</span><span>✦ Plus de 1 200 femmes ont déjà suivi cette méthode</span><span>✦ 3 semaines de Reset · 3 semaines de réintroduction · Les bases pour la vraie vie</span></div>
+</div>
+
+<!-- 1. HERO -->
+<section style="position:relative;overflow:hidden;padding-top:64px;">
+  <div class="leaf" style="top:6%;left:-6%;width:250px;height:330px;transform:rotate(8deg);"><div style="background:#609795;opacity:.12;border-radius:0 100% 0 100%;"></div></div>
+  <div class="leaf" style="top:58%;right:-6%;width:220px;height:290px;transform:rotate(-12deg);"><div style="background:#E09352;opacity:.13;border-radius:100% 0 100% 0;animation-delay:.4s;"></div></div>
+  <div class="leaf" style="top:3%;right:16%;width:110px;height:140px;transform:rotate(16deg);"><div style="background:#E09352;opacity:.1;border-radius:0 100% 0 100%;animation-delay:.9s;"></div></div>
+  <div class="narrow center" style="position:relative;z-index:1;max-width:820px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;padding:9px 20px;border-radius:100px;background:#fff;border:1px solid #e8e2d4;margin-bottom:28px;"><span style="width:7px;height:7px;border-radius:50%;background:#E09352;"></span><span style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#609795;font-weight:600;">Reset des 7 Hormones Clés</span></div>
+    <h1 style="font-size:36px;line-height:1.28;margin:0 0 22px;">Tu fais des efforts pour perdre du poids… <em class="accent">mais ton corps ne répond plus comme avant ?</em></h1>
+    <p class="lead">Le problème n'est pas ton manque d'efforts, ce sont tes hormones. Le Reset est un protocole structuré pour les rééquilibrer et perdre du poids durablement.</p>
+    <div class="steps3" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:28px 0 36px;">
+      <span class="chip" style="background:#609795;color:#fff;">3 semaines de Reset</span><span style="color:#E09352;">→</span>
+      <span class="chip" style="background:#609795;color:#fff;">3 semaines de réintroduction</span><span style="color:#E09352;">→</span>
+      <span class="chip" style="background:#E09352;color:#fff;">Les bases pour la vraie vie</span>
+    </div>
+    <video style="display:block;max-width:300px;width:100%;margin:0 auto 36px;border-radius:20px;box-shadow:0 20px 60px rgba(43,43,38,0.15);" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a668d81fb06386ededf8036.mp4" controls playsinline></video>
+    <a href="#prix" class="btn" data-cta="hero">Je commence mon Reset — 199 $</a>
+    <div class="btn-sub">Accès immédiat • Protocole étape par étape • À suivre à ton rythme</div>
+  </div>
+</section>
+
+<!-- 2. ARRÊTE D'ESSAYER N'IMPORTE QUOI -->
+<section style="background:#EFF5F4;">
+  <div class="narrow center">
+    <h2>Et si tu n'avais pas besoin d'une autre diète ?</h2>
+    <p class="lead" style="margin-bottom:32px;">Tu as peut-être déjà essayé…</p>
+    <div id="tries" style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:36px;">
+      <span class="try">Manger moins</span>
+      <span class="try">Couper les glucides</span>
+      <span class="try">Jeûner</span>
+      <span class="try">Compter tes calories</span>
+      <span class="try">Acheter des suppléments</span>
+      <span class="try">Faire plus de cardio</span>
+      <span class="try">Le dernier produit à la mode</span>
+      <span class="try">Recommencer un nouveau programme le lundi</span>
+    </div>
+    <p class="lead">Chaque fois, tu espères que <b>cette fois</b> sera la bonne. Quelques semaines plus tard, tu cherches encore la prochaine solution. Tu as dépensé une fortune, accumulé une quantité incroyable d'informations… et tu ne sais même plus ce qui fonctionne réellement pour <b>ton</b> corps.</p>
+    <div id="stop" class="stop" style="margin:28px 0 20px;">STOP.</div>
+    <p class="lead" style="color:#2B2B26;">Tu n'as pas besoin d'essayer encore plus de choses. Tu as besoin d'arrêter de tout faire au hasard et de suivre une méthode, <b>dans le bon ordre</b>.</p>
+    <p style="font-family:'Libre Baskerville',serif;font-style:italic;font-size:19px;color:#609795;margin:0;">C'est exactement pour ça que j'ai créé le Reset.</p>
+  </div>
+</section>
+
+<!-- 3+4. CORPS CONTRE TOI + POURQUOI LES HORMONES -->
+<section>
+  <div class="wrap" style="max-width:980px;">
+    <h2 class="center">Tu as l'impression que ton corps travaille contre toi ?</h2>
+    <p class="lead center" style="margin-bottom:40px;">Coche ce qui te ressemble.</p>
+    <div class="grid2 sym-grid" style="gap:40px;align-items:center;">
+      <div id="check-list" style="display:grid;gap:14px;">
+        <label class="check"><input type="checkbox">Tu manges bien, mais ton poids ne descend plus comme avant.</label>
+        <label class="check"><input type="checkbox">Tu prends du poids beaucoup plus facilement.</label>
+        <label class="check"><input type="checkbox">Tes fringales sont plus présentes.</label>
+        <label class="check"><input type="checkbox">Ton énergie monte et descend constamment.</label>
+        <label class="check"><input type="checkbox">Ton sommeil n'est plus aussi réparateur.</label>
+        <label class="check"><input type="checkbox">Ton ventre semble souvent gonflé.</label>
+        <label class="check"><input type="checkbox">Tu fais deux fois plus d'efforts pour deux fois moins de résultats.</label>
+        <div id="check-msg" style="margin-top:10px;padding:14px 18px;border-radius:14px;background:#EFF5F4;color:#609795;font-weight:600;font-size:15px;line-height:1.5;transition:background .3s,color .3s;">Coche les énoncés qui te ressemblent.</div>
+      </div>
+      <div style="background:#3d4f4d;border-radius:24px;padding:36px;color:#fff;">
+        <div class="eyebrow" style="color:#F2B783;">Ce n'est pas une question de volonté</div>
+        <h3 style="color:#fff;font-size:22px;margin-bottom:14px;">La perte de poids ne se résume pas à « mange moins, bouge plus »</h3>
+        <p style="color:#d8e2e0;font-size:15.5px;">Tes hormones influencent ta faim, ta glycémie, ton énergie, ton stress, ton sommeil et la façon dont ton corps stocke le gras. Quand elles sont déréglées, manger encore moins ne fait que compliquer les choses.</p>
+        <p style="font-family:'Libre Baskerville',serif;font-style:italic;color:#F2B783;font-size:17px;margin:0;">C'est pourquoi le Reset commence par tes hormones, pas par les calories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANTAL -->
+<section style="background:#EFF5F4;">
+  <div class="chantal-grid wrap" style="max-width:960px;display:grid;grid-template-columns:320px minmax(0,1fr);gap:52px;align-items:center;">
+    <img style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a5ed429bc0b1f5d2e0d4d24.png" alt="Chantal, naturopathe">
+    <div>
+      <div class="eyebrow">Pourquoi j'ai créé le Reset</div>
+      <h2>Bonjour, je suis Chantal</h2>
+      <p>Naturopathe spécialisée en santé hormonale féminine, j'ai vu tellement de femmes arriver avec la même frustration : <em>« Je fais attention. Je m'entraîne. J'ai essayé plein de choses. Pourquoi mon poids ne bouge plus comme avant ? »</em></p>
+      <p>Et surtout, des femmes complètement perdues devant toutes les informations contradictoires :</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 20px;">
+        <span class="chip" style="background:#f4f2ec;color:#8a8a80;text-decoration:line-through;">Coupe les glucides</span>
+        <span class="chip" style="background:#f4f2ec;color:#8a8a80;text-decoration:line-through;">Jeûne</span>
+        <span class="chip" style="background:#f4f2ec;color:#8a8a80;text-decoration:line-through;">Ne jeûne surtout pas</span>
+        <span class="chip" style="background:#f4f2ec;color:#8a8a80;text-decoration:line-through;">Mange moins</span>
+        <span class="chip" style="background:#f4f2ec;color:#8a8a80;text-decoration:line-through;">Mange plus</span>
+        <span class="chip" style="background:#f4f2ec;color:#8a8a80;text-decoration:line-through;">Fais du cardio</span>
+        <span class="chip" style="background:#f4f2ec;color:#8a8a80;text-decoration:line-through;">Prends ceci, élimine cela</span>
+      </div>
+      <p>J'ai créé le Reset pour mettre de l'ordre dans tout ça. Une méthode, un ordre, une première phase précise, une réintroduction, puis des bases à conserver dans la vraie vie.</p>
+      <p style="font-family:'Libre Baskerville',serif;font-style:italic;color:#609795;font-size:17px;margin:0;">Je ne veux pas que tu dépendes éternellement d'un protocole. Je veux que tu comprennes ce qui fonctionne pour toi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. LES 7 HORMONES -->
+<section>
+  <div class="wrap" style="max-width:1080px;">
+    <div class="center" style="max-width:700px;margin:0 auto 48px;">
+      <div class="eyebrow">Pourquoi « 7 hormones clés »</div>
+      <h2>7 hormones, 7 resets de 3 jours</h2>
+      <p class="lead" style="margin:0;">Pour chaque hormone, on ajuste un aliment, un groupe d'aliments ou un élément du quotidien qui peut la dérégler. Les ajustements s'additionnent tous les 3 jours. En 21 jours, tu as remis à zéro les 7 hormones qui influencent ton poids. Le détail de chaque reset t'attend dans le programme.</p>
+    </div>
+    <div style="position:relative;">
+    <div id="horm-track" class="hormones">
+      <div class="horm">
+        <div style="display:flex;align-items:center;gap:14px;"><div class="horm-n">1</div><div><h3 style="margin:0;">L'œstrogène</h3><div style="display:inline-block;margin-top:6px;background:#FBEBDD;color:#C2733A;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">Jours 1 à 3</div></div></div>
+        <p><b>Son rôle :</b> Hormone féminine principale, elle façonne ton cycle, tes courbes et ta digestion.</p>
+        <div><div class="horm-label">Son influence sur ton poids</div><p>En excès, elle peut ralentir la digestion, favoriser les ballonnements et freiner ta capacité à perdre du gras.</p></div>
+      </div>
+      <div class="horm">
+        <div style="display:flex;align-items:center;gap:14px;"><div class="horm-n">2</div><div><h3 style="margin:0;">L'insuline</h3><div style="display:inline-block;margin-top:6px;background:#FBEBDD;color:#C2733A;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">Jours 4 à 6</div></div></div>
+        <p><b>Son rôle :</b> Elle détermine comment ton corps utilise l'énergie de ce que tu manges.</p>
+        <div><div class="horm-label">Son influence sur ton poids</div><p>Quand elle est trop sollicitée, ton corps passe du mode « utiliser » au mode « stocker ».</p></div>
+      </div>
+      <div class="horm">
+        <div style="display:flex;align-items:center;gap:14px;"><div class="horm-n">3</div><div><h3 style="margin:0;">La leptine</h3><div style="display:inline-block;margin-top:6px;background:#FBEBDD;color:#C2733A;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">Jours 7 à 9</div></div></div>
+        <p><b>Son rôle :</b> C'est elle qui envoie le signal « je suis rassasiée ».</p>
+        <div><div class="horm-label">Son influence sur ton poids</div><p>Quand son message est brouillé, tu as faim même lorsque tu as assez mangé.</p></div>
+      </div>
+      <div class="horm">
+        <div style="display:flex;align-items:center;gap:14px;"><div class="horm-n">4</div><div><h3 style="margin:0;">Le cortisol</h3><div style="display:inline-block;margin-top:6px;background:#FBEBDD;color:#C2733A;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">Jours 10 à 12</div></div></div>
+        <p><b>Son rôle :</b> L'hormone du stress, chef d'orchestre de ton équilibre intérieur.</p>
+        <div><div class="horm-label">Son influence sur ton poids</div><p>Chroniquement élevé, il favorise le stockage, perturbe ton sommeil et entretient la fatigue.</p></div>
+      </div>
+      <div class="horm">
+        <div style="display:flex;align-items:center;gap:14px;"><div class="horm-n">5</div><div><h3 style="margin:0;">La thyroïde</h3><div style="display:inline-block;margin-top:6px;background:#FBEBDD;color:#C2733A;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">Jours 13 à 15</div></div></div>
+        <p><b>Son rôle :</b> Elle donne le rythme à ton métabolisme.</p>
+        <div><div class="horm-label">Son influence sur ton poids</div><p>Lorsqu'elle tourne au ralenti, ton énergie baisse et ton corps utilise moins efficacement ce que tu manges.</p></div>
+      </div>
+      <div class="horm">
+        <div style="display:flex;align-items:center;gap:14px;"><div class="horm-n">6</div><div><h3 style="margin:0;">L'hormone de croissance</h3><div style="display:inline-block;margin-top:6px;background:#FBEBDD;color:#C2733A;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">Jours 16 à 18</div></div></div>
+        <p><b>Son rôle :</b> Elle participe à la réparation du corps et au maintien de ta masse musculaire.</p>
+        <div><div class="horm-label">Son influence sur ton poids</div><p>L'inflammation peut nuire à son action, et l'inflammation est un frein majeur à la perte de poids.</p></div>
+      </div>
+      <div class="horm">
+        <div style="display:flex;align-items:center;gap:14px;"><div class="horm-n">7</div><div><h3 style="margin:0;">La testostérone</h3><div style="display:inline-block;margin-top:6px;background:#FBEBDD;color:#C2733A;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">Jours 19 à 21</div></div></div>
+        <p><b>Son rôle :</b> Elle soutient ton énergie, ta motivation et ta masse musculaire.</p>
+        <div><div class="horm-label">Son influence sur ton poids</div><p>Quand son équilibre est perturbé, ta masse musculaire et ton métabolisme en souffrent.</p></div>
+      </div>
+    </div>
+    <button type="button" class="horm-nav" data-dir="-1" aria-label="Précédent" style="left:-22px;">‹</button>
+    <button type="button" class="horm-nav" data-dir="1" aria-label="Suivant" style="right:-22px;">›</button>
+    </div>
+    <div id="horm-dots" style="display:flex;justify-content:center;gap:8px;margin-top:22px;"></div>
+    <div class="center" style="margin-top:36px;"><a href="#prix" class="btn" data-cta="hormones">Je commence mon Reset — 199 $</a></div>
+  </div>
+</section>
+
+<!-- 6. LE PROTOCOLE -->
+<section id="protocole" style="background:#EFF5F4;">
+  <div class="wrap">
+    <div class="center" style="max-width:680px;margin:0 auto 48px;">
+      <div class="eyebrow">La méthode</div>
+      <h2>Pas une diète à suivre pour toujours.<br><em class="accent">Un Reset en 3 phases.</em></h2>
+    </div>
+    <div class="car"><div class="ctrack phases" style="--per:3;--per-m:1.12;">
+      <div class="phase reveal">
+        <div class="phase-badge" style="background:#609795;"><span>Phase</span><b>1</b><span>3 semaines</span></div>
+        <div>
+          <h3>Le Reset</h3>
+          <p>Pendant 21 jours, tu suis les 7 resets, avec un nouvel ajustement tous les 3 jours. Oui, cette phase est plus stricte. Mais elle n'est pas conçue pour devenir ta façon de manger pour le reste de ta vie : elle simplifie ton alimentation pour observer clairement comment ton corps réagit.</p>
+          <div class="bullets"><div>Tu sais quoi privilégier.</div><div>Tu sais quoi retirer temporairement.</div><div>Tu sais quoi manger et quelles habitudes mettre en place.</div></div>
+          <p style="font-weight:600;color:#609795;margin:0;">Tu arrêtes de deviner. Tu suis le protocole.</p>
+        </div>
+      </div>
+      <div class="phase reveal">
+        <div class="phase-badge" style="background:#609795;"><span>Phase</span><b>2</b><span>3 semaines</span></div>
+        <div>
+          <h3>La réintroduction</h3>
+          <p>C'est ici que le Reset se distingue d'une diète restrictive : <b>on ne reste pas dans la restriction.</b> Je t'accompagne dans une réintroduction progressive et méthodique des aliments.</p>
+          <div class="bullets"><div>Tu réintroduis certains aliments, un à la fois.</div><div>Tu observes comment ton corps répond.</div><div>Tu comprends ce qui fonctionne le mieux pour toi.</div></div>
+          <p style="font-weight:600;color:#609795;margin:0;">Le but n'est pas une liste infinie d'interdits. C'est de mieux connaître ton corps.</p>
+        </div>
+      </div>
+      <div class="phase reveal" style="border:2px solid #E09352;">
+        <div class="phase-badge" style="background:#E09352;"><span>Phase</span><b>3</b><span>Après</span></div>
+        <div>
+          <h3>La vie après le Reset</h3>
+          <p>Probablement la phase la plus importante. Perdre du poids quelques semaines pour revenir ensuite à tes anciennes habitudes ne règle rien. Je te montre :</p>
+          <div class="bullets"><div>Quelles bases conserver, et comment retrouver de la flexibilité.</div><div>Comment construire tes repas et soutenir ton métabolisme.</div><div>Comment gérer les sorties et la vraie vie.</div><div>Comment éviter le fameux « Bon… je recommence lundi ».</div></div>
+          <p style="font-weight:600;color:#E09352;margin:0;">Le véritable objectif n'est pas de réussir 3 semaines strictes. C'est de savoir quoi faire après.</p>
+        </div>
+      </div>
+    </div><button type="button" class="cnav" data-dir="-1" aria-label="Précédent" style="left:-22px;">‹</button><button type="button" class="cnav" data-dir="1" aria-label="Suivant" style="right:-22px;">›</button></div><div class="cdots"></div>
+  </div>
+</section>
+
+<!-- 7. AVANT / APRÈS RESET -->
+<section>
+  <div class="wrap">
+    <div class="center" style="max-width:700px;margin:0 auto 44px;">
+      <h2>Tu ne devrais pas terminer le Reset avec une autre liste de règles</h2>
+      <p class="lead" style="margin:0;">Tu devrais le terminer en comprenant ton corps.</p>
+    </div>
+    <div class="compare" style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;align-items:center;">
+      <div class="card" style="background:#f4f2ec;box-shadow:none;">
+        <div class="eyebrow" style="color:#9a9a90;">Avant le Reset</div>
+        <div style="display:grid;gap:10px;color:#6b6b62;font-size:15.5px;">
+          <div>Tu essaies plein de choses en même temps.</div><div>Tu ne sais plus quoi manger.</div><div>Tu dépenses en solutions différentes.</div><div>Tu coupes des aliments sans savoir pourquoi.</div><div>Tu penses que tu manques de volonté.</div><div>Tu recommences encore et encore.</div>
+        </div>
+      </div>
+      <div class="compare-arrow" style="justify-self:center;font-size:28px;color:#E09352;">→</div>
+      <div class="card" style="border:2px solid #609795;">
+        <div class="eyebrow" style="color:#609795;">Après le Reset</div>
+        <div style="display:grid;gap:10px;font-size:15.5px;font-weight:500;">
+          <div>Tu as suivi une méthode structurée, dans un ordre précis.</div><div>Tu comprends tes réactions.</div><div>Tu sais quelles bases alimentaires conserver.</div><div>Tu sais sortir progressivement de la phase stricte.</div><div>Tu as une stratégie claire pour poursuivre ta perte de poids.</div><div>Tu arrêtes de chercher la prochaine solution miracle.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CE QUE TU REÇOIS -->
+<section style="background:#EFF5F4;">
+  <div class="wrap">
+    <div class="center" style="max-width:680px;margin:0 auto 44px;">
+      <div class="eyebrow">Ce que tu reçois</div>
+      <h2>Tout ce qu'il te faut pour réussir ton Reset</h2>
+      <p class="lead" style="margin:0;">Dès ton inscription, tu as accès à l'ensemble du programme : les formations, les guides et les outils pour suivre chaque phase sans te poser de questions.</p>
+    </div>
+    <div class="car"><div class="gets ctrack" style="--per:3;--per-m:1.35;">
+      <div class="card"><h3>Les formations vidéo</h3><p class="muted" style="margin:0;">Des leçons préenregistrées pour comprendre les 7 hormones et ce que ton corps vit, à écouter quand ça te convient.</p></div>
+      <div class="card"><h3>Le guide des 7 resets</h3><p class="muted" style="margin:0;">Plus de 60 pages qui t'indiquent, jour après jour, quoi retirer, quoi manger et pourquoi, pour ne plus jamais te demander « est-ce que j'ai le droit ? ».</p></div>
+      <div class="card"><h3>Les listes d'aliments</h3><p class="muted" style="margin:0;">Des repères clairs à garder sur ton téléphone ou sur ton frigo, pour faire ton épicerie sans hésiter.</p></div>
+      <div class="card"><h3>Les menus exemples et recettes</h3><p class="muted" style="margin:0;">Un menu type pour chaque reset et des recettes savoureuses (shakes, soupes, et même des brownies) pour que la phase stricte reste agréable.</p></div>
+      <div class="card"><h3>Le guide de réintroduction</h3><p class="muted" style="margin:0;">Quoi réintroduire, quand le faire et quoi observer, pour ne pas terminer les 3 premières semaines complètement perdue.</p></div>
+      <div class="card"><h3>Les outils de suivi</h3><p class="muted" style="margin:0;">Pour noter tes réactions et tes progrès, et voir enfin clairement ce qui fonctionne pour toi.</p></div>
+      <div class="card"><h3>Les 2 suppléments du Reset</h3><p class="muted" style="margin:0;">Deux produits précis, avec le dosage et le moment de la prise, pour arrêter d'acheter des suppléments au hasard.</p></div>
+      <div class="card"><h3>Le groupe privé + Chantal</h3><p class="muted" style="margin:0;">Pose tes questions tout au long du programme et reçois les réponses personnelles de Chantal.</p></div>
+    </div><button type="button" class="cnav" data-dir="-1" aria-label="Précédent" style="left:-22px;">‹</button><button type="button" class="cnav" data-dir="1" aria-label="Suivant" style="right:-22px;">›</button></div><div class="cdots"></div>
+  </div>
+</section>
+
+<!-- 9. POUR QUI -->
+<section>
+  <div class="wrap">
+    <h2 class="center" style="margin-bottom:44px;">Le Reset est-il pour toi ?</h2>
+    <div class="grid2 forwho" style="align-items:start;">
+      <div class="card" style="border:2px solid #609795;">
+        <div class="eyebrow" style="color:#609795;">C'est pour toi si…</div>
+        <div style="display:grid;gap:12px;">
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#609795;font-weight:700;">✓</span>Tu veux perdre du poids, mais ce qui fonctionnait avant ne donne plus les mêmes résultats.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#609795;font-weight:700;">✓</span>Tu as l'impression d'avoir tout essayé.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#609795;font-weight:700;">✓</span>Tu es tannée de dépenser pour des solutions séparées, sans véritable plan.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#609795;font-weight:700;">✓</span>Tu es prête à suivre une phase plus stricte pour mieux comprendre le rôle de tes hormones, voir comment certains aliments et habitudes influencent ton corps, et apprendre à soutenir ton métabolisme.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#609795;font-weight:700;">✓</span>Tu veux ensuite réintroduire les aliments plutôt que rester dans la restriction.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#609795;font-weight:700;">✓</span>Tu veux une stratégie que tu peux garder après le programme.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#609795;font-weight:700;">✓</span>Tu veux arrêter de recommencer.</div>
+        </div>
+      </div>
+      <div class="card" style="background:#f4f2ec;box-shadow:none;">
+        <div class="eyebrow" style="color:#9a9a90;">Ce n'est pas pour toi si…</div>
+        <div style="display:grid;gap:12px;color:#6b6b62;">
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#c4c4bc;font-weight:700;">✕</span>Tu recherches une pilule magique.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#c4c4bc;font-weight:700;">✕</span>Tu veux un nombre de livres garanti en quelques jours.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#c4c4bc;font-weight:700;">✕</span>Tu n'es pas prête à modifier temporairement ton alimentation.</div>
+          <div class="check" style="cursor:default;font-size:15.5px;"><span style="color:#c4c4bc;font-weight:700;">✕</span>Tu recherches un diagnostic ou un suivi médical personnalisé.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. RÉSULTATS / TÉMOIGNAGES -->
+<section style="background:#EFF5F4;">
+  <div class="wrap" style="max-width:1000px;">
+    <div class="center" style="max-width:680px;margin:0 auto 44px;">
+      <div class="eyebrow">Elles ont fait le Reset</div>
+      <h2>Leurs histoires, leurs résultats</h2>
+    </div>
+    <div class="car" style="max-width:760px;margin:0 auto 52px;"><div class="ctrack" style="--per:3;--per-m:1.7;">
+      <img style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a5ed429bc0b1f5d2e0d4d1f.jpg" alt="Résultat cliente">
+      <img style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a5ed4291a0f048050ce3145.jpg" alt="Résultat cliente">
+      <img style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a5ed42c1097b81195951569.jpeg" alt="Résultat cliente">
+      <img style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a5ed429baf5f6da40b75d38.jpg" alt="Résultat cliente">
+      <img style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a5ed4299c9b37b5fd43c499.jpg" alt="Résultat cliente">
+      <img style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6a5ed42abaf5f6da40b75d4b.jpeg" alt="Résultat cliente">
+    </div><button type="button" class="cnav" data-dir="-1" aria-label="Précédent" style="left:-22px;">‹</button><button type="button" class="cnav" data-dir="1" aria-label="Suivant" style="right:-22px;">›</button></div><div class="cdots" style="margin-top:-30px;margin-bottom:40px;"></div>
+    <!-- ⚠ TÉMOIGNAGES FICTIFS (maquette) : À REMPLACER par de vrais témoignages de clientes Reset, avec permission, AVANT la mise en ligne -->
+    <div class="car"><div class="ctrack" style="--per:3;--per-m:1.15;">
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:6px;">Julie, 44 ans</div>
+        <div class="chip" style="margin-bottom:16px;">Ventre dégonflé · −11 lb</div>
+        <p class="muted" style="font-size:14.5px;"><b style="color:#2B2B26;">Avant :</b> « Je mangeais « santé », je faisais du cardio 4 fois par semaine et j'avais essayé le jeûne intermittent. Mon ventre restait gonflé et la balance ne bougeait plus depuis 2 ans. »</p>
+        <p class="muted" style="font-size:14.5px;"><b style="color:#2B2B26;">Pendant :</b> « Les premiers jours ont été plus exigeants, mais j'ai suivi le guide à la lettre. En réintroduisant, j'ai enfin compris quels aliments me gonflaient. »</p>
+        <p class="muted" style="font-size:14.5px;margin:0;"><b style="color:#2B2B26;">Aujourd'hui :</b> « Je garde mes shakes le matin et ma livre de légumes par jour. Mon ventre ne gonfle plus et je me sens enfin en contrôle. »</p>
+      </div>
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:6px;">Nathalie, 51 ans</div>
+        <div class="chip" style="margin-bottom:16px;">Sommeil retrouvé · −14 lb</div>
+        <p class="muted" style="font-size:14.5px;"><b style="color:#2B2B26;">Avant :</b> « En périménopause, je me réveillais à 3 h chaque nuit et j'avais pris du poids autour de la taille. J'avais acheté une dizaine de suppléments sans jamais savoir lesquels fonctionnaient. »</p>
+        <p class="muted" style="font-size:14.5px;"><b style="color:#2B2B26;">Pendant :</b> « Avoir un ordre précis m'a enlevé un poids énorme. Je n'avais plus à réfléchir : je suivais le reset du jour. Mes fringales du soir ont diminué dès la deuxième semaine. »</p>
+        <p class="muted" style="font-size:14.5px;margin:0;"><b style="color:#2B2B26;">Aujourd'hui :</b> « Je dors mes nuits et j'ai arrêté d'acheter n'importe quoi. Je sais maintenant ce qui me convient, et je ne recommence plus chaque lundi. »</p>
+      </div>
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:6px;">Émilie, 38 ans</div>
+        <div class="chip" style="margin-bottom:16px;">Énergie stable · −9 lb</div>
+        <p class="muted" style="font-size:14.5px;"><b style="color:#2B2B26;">Avant :</b> « Deux enfants, un travail à temps plein, et un coup de fatigue chaque après-midi que je compensais avec du sucre et du café. Les diètes ne duraient jamais plus de deux semaines. »</p>
+        <p class="muted" style="font-size:14.5px;"><b style="color:#2B2B26;">Pendant :</b> « Je m'attendais à avoir faim, mais avec les protéines et les bons gras, c'était tout le contraire. La réintroduction m'a montré quels aliments me rendaient amorphe. »</p>
+        <p class="muted" style="font-size:14.5px;margin:0;"><b style="color:#2B2B26;">Aujourd'hui :</b> « Mon énergie est stable toute la journée. J'applique le 80/20 sans culpabilité et j'ai enfin un plan qui s'adapte à ma vraie vie. »</p>
+      </div>
+    </div><button type="button" class="cnav" data-dir="-1" aria-label="Précédent" style="left:-22px;">‹</button><button type="button" class="cnav" data-dir="1" aria-label="Suivant" style="right:-22px;">›</button></div><div class="cdots"></div>
+    <p class="center" style="font-size:12.5px;color:#9a9a90;margin:28px 0 0;">Résultats réels de clientes, partagés avec leur permission. Les résultats varient d'une personne à l'autre.</p>
+  </div>
+</section>
+
+<!-- 12. PRIX -->
+<section id="prix" style="background:#3d4f4d;">
+  <div class="narrow center">
+    <h2 style="color:#fff;">Combien as-tu déjà dépensé à essayer des solutions qui ne s'emboîtent jamais ensemble ?</h2>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px 0 20px;">
+      <span class="chip" style="background:rgba(255,255,255,.1);color:#cfd9d7;text-decoration:line-through;">Suppléments</span>
+      <span class="chip" style="background:rgba(255,255,255,.1);color:#cfd9d7;text-decoration:line-through;">Programmes</span>
+      <span class="chip" style="background:rgba(255,255,255,.1);color:#cfd9d7;text-decoration:line-through;">Applications</span>
+      <span class="chip" style="background:rgba(255,255,255,.1);color:#cfd9d7;text-decoration:line-through;">Produits</span>
+      <span class="chip" style="background:rgba(255,255,255,.1);color:#cfd9d7;text-decoration:line-through;">Plans alimentaires</span>
+    </div>
+    <p class="lead" style="color:#d8e2e0;margin-bottom:40px;">Le Reset te donne plutôt un protocole complet, à suivre dans le bon ordre.</p>
+    <div style="background:#fff;border-radius:24px;padding:44px 32px;max-width:520px;margin:0 auto;">
+      <div class="eyebrow" style="color:#609795;">Reset des 7 Hormones Clés</div>
+      <div style="font-family:'Libre Baskerville',serif;font-size:52px;color:#E09352;line-height:1;margin:6px 0 24px;">199 $</div>
+      <div style="display:grid;gap:8px;font-size:16px;margin-bottom:8px;">
+        <div><b>3 semaines</b> de Reset</div><div style="color:#E09352;">+</div>
+        <div><b>3 semaines</b> de réintroduction</div><div style="color:#E09352;">+</div>
+        <div>La stratégie pour <b>conserver les bases</b> ensuite</div>
+      </div>
+      <div class="btn-sub" style="margin:16px 0 26px;">Un seul paiement • Accès immédiat</div>
+      <a href="https://www.chantallefrancoisnaturopathe.com/challenge-payment/b1f69b1d-1a0d-41f3-b83b-ea91cb48a78a?showOneAppInfo=false" target="_blank" rel="noopener" class="btn" data-cta="prix" data-checkout="1">Oui, je commence mon Reset — 199 $</a>
+    </div>
+  </div>
+</section>
+
+<!-- 13. FAQ -->
+<section>
+  <div class="narrow">
+    <h2 class="center" style="margin-bottom:40px;">Questions fréquentes</h2>
+    <div id="faq" style="display:grid;gap:12px;"></div>
+  </div>
+</section>
+
+<!-- 14. CTA FINAL -->
+<section style="background:#609795;">
+  <div class="narrow center">
+    <h2 style="color:#fff;">Et si, cette fois, tu arrêtais d'essayer au hasard ?</h2>
+    <p class="lead" style="color:#e8f2f1;">Pas un autre truc trouvé sur Instagram. Pas un autre supplément acheté parce qu'une influenceuse en parle. Pas une autre diète que tu abandonneras dans trois semaines.</p>
+    <p style="font-family:'Libre Baskerville',serif;font-size:20px;color:#fff;line-height:1.6;margin:28px 0 36px;">Un protocole. Une méthode. Une réintroduction.<br><em style="color:#FDE2C8;">Et surtout, une stratégie pour l'après.</em></p>
+    <a href="https://www.chantallefrancoisnaturopathe.com/challenge-payment/b1f69b1d-1a0d-41f3-b83b-ea91cb48a78a?showOneAppInfo=false" target="_blank" rel="noopener" class="btn" data-cta="final" data-checkout="1" style="box-shadow:0 10px 30px rgba(0,0,0,0.18);">Je commence mon Reset — 199 $</a>
+  </div>
+</section>
+
+<!-- CADEAU -->
+<section style="background:#EFF5F4;padding:72px 24px;">
+  <div class="lead-grid" style="max-width:680px;margin:0 auto;background:#fff;border-radius:20px;padding:30px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;align-items:center;">
+    <img style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;" src="https://assets.cdn.filesafe.space/7NSlWxBMcSrX7JkrzLOm/media/6ad7614b4442a557ab260935.png" alt="Ebook Déjeuners pour booster ton GLP-1">
+    <div>
+      <div class="eyebrow" style="font-size:12px;margin-bottom:8px;">Pas prête pour le Reset ? Commence par ton déjeuner</div>
+      <h3 style="font-size:20px;">L'ebook « Déjeuners pour booster ton GLP-1 »</h3>
+      <p class="muted" style="font-size:15px;">Des déjeuners rassasiants pour comprendre l'importance du premier repas de la journée et appliquer un premier changement simple.</p>
+      <a href="https://www.chantallefrancoisnaturopathe.com/product-page/d%C3%A9jeuners-pour-booster-ton-glp-1" target="_blank" rel="noopener" class="btn" data-cta="ebook-glp1">Je veux l'ebook — 5 $</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ---- Suivi : PAGE → SCROLL → CLIC CTA → CHECKOUT (Meta Pixel + GTM/dataLayer si installés) ----
+  function track(name, params) {
+    params = params || {};
+    if (window.fbq) window.fbq('trackCustom', name, params);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, params));
+  }
+  track('Reset_PageVue');
+  var depths = [25, 50, 75, 100], hit = {};
+  window.addEventListener('scroll', function () {
+    var pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+    depths.forEach(function (d) { if (pct >= d && !hit[d]) { hit[d] = 1; track('Reset_Scroll', { profondeur: d }); } });
+  }, { passive: true });
+  document.querySelectorAll('[data-cta]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      track('Reset_ClicCTA', { bouton: el.dataset.cta });
+      if (el.dataset.checkout && window.fbq) window.fbq('track', 'InitiateCheckout', { value: 199, currency: 'CAD' });
+    });
+  });
+
+  // ---- FAQ ----
+  var FAQ = [
+    ["Est-ce que le Reset est une diète ?", "Non. C'est un protocole structuré en 3 phases. La première est plus stricte, mais temporaire : elle sert à simplifier ton alimentation pour mieux observer ton corps, avant la réintroduction et la phase de maintien."],
+    ["Pourquoi les 3 premières semaines sont-elles plus strictes ?", "Les 21 premiers jours sont divisés en 7 resets de 3 jours : chaque reset cible une hormone. Retirer temporairement ces aliments permet de calmer le jeu et d'observer clairement comment ton corps réagit. Sans cette base, impossible de savoir ce qui t'aide vraiment ou ce qui te nuit."],
+    ["Est-ce que je vais devoir manger comme ça pour toujours ?", "Non, et c'est justement ce qui rend le Reset différent. Après les 3 semaines, tu réintroduis les aliments progressivement, puis tu apprends quelles bases conserver avec plus de flexibilité."],
+    ["Comment fonctionne la réintroduction ?", "Tu réintroduis les aliments de façon méthodique, un à la fois, en observant ton énergie, ta digestion, tes ballonnements et tes fringales. Un guide t'indique quoi réintroduire, quand, et quoi observer."],
+    ["Combien de temps dure le programme ?", "3 semaines de Reset, puis 3 semaines de réintroduction, suivies de la phase « vie après le Reset » pour conserver tes acquis. Tu avances à ton rythme et l'accès est immédiat."],
+    ["Combien de temps dois-je prévoir chaque semaine ?", "Les leçons sont préenregistrées et tu les suis quand ça te convient. La majorité de ton temps sera consacrée à la préparation de tes repas, avec des recettes simples."],
+    ["Est-ce que je dois acheter des suppléments ?", "Le protocole recommande 2 suppléments précis, choisis pour leur qualité et leur dosage. Tout est expliqué dans le guide, pour éviter d'acheter des produits au hasard."],
+    ["Est-ce que je dois m'entraîner ?", "On vise environ 30 minutes de mouvement par jour, sans viser l'intensité. Pendant le Reset, les formes plus douces comme la marche ou le yoga fonctionnent généralement mieux. Tu écoutes ton corps."],
+    ["Est-ce adapté à la périménopause et à la ménopause ?", "Oui. Chantal est spécialisée en santé hormonale féminine, incluant la périménopause et la ménopause, et les principes du Reset s'appliquent à ces étapes de vie."],
+    ["Est-ce que je peux faire le Reset si je prends des médicaments ?", "Le Reset ne remplace pas un suivi médical. Si tu prends des médicaments ou as une condition de santé, parles-en à ton médecin ou à ton pharmacien avant de modifier ton alimentation ou de prendre des suppléments."],
+    ["Combien de poids vais-je perdre ?", "Honnêtement, ça varie d'une personne à l'autre, et nous ne garantissons pas un nombre précis de livres. Ce que le Reset t'apporte, c'est une méthode claire pour comprendre ton corps et une stratégie pour poursuivre ton objectif après le programme."]
+  ];
+  var faqEl = document.getElementById('faq');
+  FAQ.forEach(function (f) {
+    var d = document.createElement('div');
+    d.className = 'faq';
+    d.innerHTML = '<div class="faq-q"><span>' + f[0] + '</span><span>+</span></div><p class="faq-a">' + f[1] + '</p>';
+    d.addEventListener('click', function () {
+      var open = d.classList.toggle('open');
+      d.querySelector('.faq-q span:last-child').textContent = open ? '−' : '+';
+    });
+    faqEl.appendChild(d);
+  });
+
+  // ---- Animations au scroll ----
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      if (e.target.id === 'tries') {
+        e.target.querySelectorAll('.try').forEach(function (t, i) {
+          setTimeout(function () { t.classList.add('in'); }, i * 260);
+          setTimeout(function () { t.classList.add('struck'); }, i * 260 + 450);
+        });
+      } else e.target.classList.add('in');
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('#tries, #stop, .reveal').forEach(function (el) { io.observe(el); });
+
+  // ---- Carrousel hormones ----
+  (function () {
+    var track = document.getElementById('horm-track');
+    var cards = track.querySelectorAll('.horm');
+    var dots = document.getElementById('horm-dots');
+    cards.forEach(function (c, i) {
+      c.classList.add('in');
+      var d = document.createElement('button');
+      d.className = 'hdot' + (i === 0 ? ' on' : '');
+      d.setAttribute('aria-label', 'Hormone ' + (i + 1));
+      d.onclick = function () { track.scrollLeft = c.offsetLeft - track.offsetLeft; };
+      dots.appendChild(d);
+    });
+    function step() { return cards[0].offsetWidth + 20; }
+    document.querySelectorAll('.horm-nav').forEach(function (b) {
+      b.onclick = function () { track.scrollBy({ left: step() * +b.dataset.dir }); };
+    });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / step());
+      dots.querySelectorAll('.hdot').forEach(function (d, j) { d.classList.toggle('on', j === i); });
+    }, { passive: true });
+  })();
+
+  // ---- Cases à cocher : message dynamique ----
+  (function () {
+    var list = document.getElementById('check-list'), msg = document.getElementById('check-msg');
+    if (!list || !msg) return;
+    var boxes = list.querySelectorAll('input[type=checkbox]');
+    var MSGS = [
+      'Coche les énoncés qui te ressemblent.',
+      '1 signe, c\'est déjà un message de ton corps. Ce n\'est pas dans ta tête.',
+      '2 signes : ce n\'est pas un hasard. Tes hormones jouent probablement un rôle.',
+      '3 signes : tu n\'as pas un problème de volonté, tu as besoin d\'un plan structuré.',
+      '4 signes ou plus : le Reset a été créé exactement pour une femme comme toi.'
+    ];
+    boxes.forEach(function (b) {
+      b.addEventListener('change', function () {
+        var n = list.querySelectorAll('input:checked').length;
+        msg.textContent = MSGS[Math.min(n, 4)];
+        var hot = n >= 3;
+        msg.style.background = hot ? '#E09352' : '#EFF5F4';
+        msg.style.color = hot ? '#fff' : '#609795';
+      });
+    });
+  })();
+
+  // ---- Carrousels génériques ----
+  document.querySelectorAll('.car').forEach(function (car) {
+    var track = car.querySelector('.ctrack');
+    var items = track.children;
+    var dots = car.nextElementSibling && car.nextElementSibling.classList.contains('cdots') ? car.nextElementSibling : null;
+    function step() { return items[0].offsetWidth + parseFloat(getComputedStyle(track).columnGap || 20); }
+    function setup() {
+      var scrollable = track.scrollWidth > track.clientWidth + 4;
+      car.classList.toggle('static', !scrollable);
+      if (!dots) return;
+      dots.innerHTML = '';
+      if (!scrollable) return;
+      var n = Math.round((track.scrollWidth - track.clientWidth) / step()) + 1;
+      for (var i = 0; i < n; i++) (function (i) {
+        var d = document.createElement('button');
+        d.className = 'hdot' + (i === 0 ? ' on' : '');
+        d.onclick = function () { track.scrollLeft = i * step(); };
+        dots.appendChild(d);
+      })(i);
+    }
+    car.querySelectorAll('.cnav').forEach(function (b) {
+      b.onclick = function () { track.scrollBy({ left: step() * +b.dataset.dir }); };
+    });
+    track.addEventListener('scroll', function () {
+      if (!dots) return;
+      var i = Math.round(track.scrollLeft / step());
+      dots.querySelectorAll('.hdot').forEach(function (d, j) { d.classList.toggle('on', j === i); });
+    }, { passive: true });
+    setup();
+    window.addEventListener('resize', setup);
+    track.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('in'); });
+  });
+</script>
+</body>
+</html>
